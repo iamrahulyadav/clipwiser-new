@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Home"/>
+        <item
+            android:id="@+id/nav_menu_trackme"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Track me"/>
+        <item
+            android:id="@+id/nav_menu_geofencing"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Geofencing"/>
+        <item
+            android:id="@+id/nav_menu_mypath"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Draw My Path"/>
+    </group>
+
+    <item android:title="Sub items">
+        <menu>
+            <item
+                android:icon="@mipmap/ic_launcher"
+                android:title="Sub item 1"/>
+            <item
+                android:icon="@mipmap/ic_launcher"
+                android:title="Sub item 2"/>
+        </menu>
+    </item>
+</menu>

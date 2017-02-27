@@ -1,0 +1,305 @@
+{
+  "filterData": [
+    { "id":"100",
+      "name": "Price",
+      "isSingleCheck" : true,
+      "filterChildList": [{
+        "id":101,
+        "name": "100 - 500",
+        "value" : ""
+      },{
+        "id":102,
+        "name": "500 - 1000",
+        "value" : ""
+      },{
+        "id":103,
+        "name": "1000 - 2000",
+        "value" : ""
+      },{
+        "id":104,
+        "name": "2000 - 5000",
+        "value" : ""
+      },{
+        "id":105,
+        "name": "5000 - 10000",
+        "value" : ""
+      }]
+
+    },{
+      "id":"200",
+      "name": "Discount",
+      "isSingleCheck" : true,
+      "filterChildList": [{
+        "id":201,
+        "name": "Upto 10%",
+        "value" : ""
+      },{
+        "id":202,
+        "name": "Upto 20%",
+        "value" : ""
+      },{
+        "id":203,
+        "name": "Upto 30%",
+        "value" : ""
+      },{
+        "id":204,
+        "name": "Upto 40%",
+        "value" : ""
+      },{
+        "id":205,
+        "name": "Upto 50%",
+        "value" : ""
+      },{
+        "id":206,
+        "name": "Upto 60%",
+        "value" : ""
+      },{
+        "id":207,
+        "name": "Upto 70%",
+        "value" : ""
+      },{
+        "id":208,
+        "name": "Upto 80%",
+        "value" : ""
+      }]
+
+    },{
+      "id":"300",
+      "name": "Color",
+      "isSingleCheck" : false,
+      "filterChildList": [{
+        "id":301,
+        "name": "Red",
+        "value" : "#ff0000"
+      },{
+        "id":302,
+        "name": "Blue",
+        "value" : "#00ff00"
+      },{
+        "id":303,
+        "name": "Green",
+        "value" : "#0000ff"
+      },{
+        "id":304,
+        "name": "Black",
+        "value" : "#000000"
+      },{
+        "id":305,
+        "name": "White",
+        "value" : "#ffffff"
+      },{
+        "id":306,
+        "name": "Grey",
+        "value" : "#808080"
+
+      },{
+        "id":307,
+        "name": "Light Coral",
+        "value":"#F08080"
+      },{
+        "id":308,
+        "name": "Salmon",
+        "value":"#FA8072"
+      },{
+        "id":309,
+        "name": "Dark Salmon",
+        "value":"#E9967A"
+      },{
+        "id":310,
+        "name": "Silver",
+        "value":"#c0c0c0"
+      },{
+        "id":311,
+        "name": "Maron",
+        "value":"#800000"
+      },{
+        "id":312,
+        "name": "Yellow",
+        "value":"#ffff00"
+      },{
+        "id":313,
+        "name": "Olive",
+        "value":"#808000"
+      },{
+        "id":314,
+        "name": "Lime",
+        "value":"#00FF00"
+      },{
+        "id":315,
+        "name": "Aqua",
+        "value":"#00FFFF"
+      },{
+        "id":316,
+        "name": "Teal",
+        "value":"#008080"
+      },{
+        "id":317,
+        "name": "Navy",
+        "value":"#000080"
+      },{
+        "id":318,
+        "name": "Purple",
+        "value":"#800080"
+      },{
+        "id":319,
+        "name": "FUCHSIA",
+        "value":"#FF00FF"
+      }]
+    },
+    {
+      "id":"400",
+      "name": "Gender",
+      "isSingleCheck" : true,
+      "filterChildList": [{
+        "id":401,
+        "name": "Men",
+        "value" : ""
+      },{
+        "id":402,
+        "name": "Women",
+        "value" : ""
+      },{
+        "id":403,
+        "name": "Boy",
+        "value" : ""
+      },{
+        "id":404,
+        "name": "Girl",
+        "value" : ""
+      }]
+
+    },{
+      "id":"500",
+      "name": "Brand",
+      "isSingleCheck" : false,
+      "filterChildList": [{
+        "id":501,
+        "name": "Addidas",
+        "value" : ""
+      },{
+        "id":502,
+        "name": "Nike",
+        "value" : ""
+      },{
+        "id":503,
+        "name": "Reebok",
+        "value" : ""
+      },{
+        "id":504,
+        "name": "Puma",
+        "value" : ""
+      },{
+        "id":505,
+        "name": "Mast And Harbor",
+        "value" : ""
+      },{
+        "id":506,
+        "name": "Disel",
+        "value" : "Disel"
+      },{
+        "id":507,
+        "name": "Lancer",
+        "value" : ""
+      },{
+        "id":508,
+        "name": "RoadSter",
+        "value" : ""
+      },{
+        "id":509,
+        "name": "Highlander",
+        "value" : ""
+      },{
+        "id":510,
+        "name": "L man",
+        "value" : "Laman"
+      },{
+        "id":511,
+        "name": "Yonex",
+        "value" : ""
+      },{
+        "id":512,
+        "name": "Silver",
+        "value" : ""
+      },{
+        "id":513,
+        "name": "Abcd1",
+        "value" : ""
+      },{
+        "id":514,
+        "name": "Abcd2",
+        "value" : ""
+      },{
+        "id":515,
+        "name": "Abcd3",
+        "value" : ""
+      }]
+
+    },
+    {
+      "id":"600",
+      "name": "Occasion",
+      "isSingleCheck" : false,
+      "filterChildList": [{
+        "id":601,
+        "name": "Casual",
+        "value" : ""
+      },{
+        "id":602,
+        "name": "Formal",
+        "value" : ""
+      },{
+        "id":603,
+        "name": "Sports",
+        "value" : ""
+      }]
+    },
+    {
+      "id":"700",
+      "name": "Fit",
+      "isSingleCheck" : false,
+      "filterChildList": [{
+        "id":701,
+        "name": "Regular",
+        "value" : ""
+      },{
+        "id":702,
+        "name": "Slim",
+        "value" : ""
+      },{
+        "id":703,
+        "name": "Skinny Fit",
+        "value" : ""
+      },{
+        "id":704,
+        "name": "Bottom Feet",
+        "value" : ""
+      }]
+    },
+    {
+      "id":"800",
+      "name": "Pattern",
+      "isSingleCheck" : true,
+      "filterChildList": [{
+        "id":201,
+        "name": "Cross Fade",
+        "value" : ""
+      },{
+        "id":202,
+        "name": "Check",
+        "value" : ""
+      },{
+        "id":203,
+        "name": "Solid",
+        "value" : ""
+      },{
+        "id":204,
+        "name": "New Gen",
+        "value" : ""
+      },{
+        "id":205,
+        "name": "Zig Zag",
+        "value" : ""
+      }]
+
+    }]
+}

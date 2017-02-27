@@ -1,0 +1,163 @@
+{
+  "homeData": [
+    { "id":"101",
+      "title": "banner",
+      "bannertype":1,
+      "productType":"Banner",
+      "images": [{
+        "id":"1234",
+        "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1470175209/home/banner2.jpg"
+      }]
+
+    },{
+      "id":"101",
+      "title": "banner",
+      "bannertype":1,
+      "productType":"Banner",
+      "images": [{
+        "id":"1234",
+        "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1470175211/home/banner3.jpg"
+      }]
+
+    },{
+      "id":"101",
+      "title": "banner",
+      "bannertype":1,
+      "productType":"Banner",
+      "images": [{
+        "id":"1234",
+        "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1470175207/home/banner1.jpg"
+      }]
+
+    },
+    {
+      "id":"101",
+      "title": "banner",
+      "bannertype":1,
+      "productType":"Price images",
+      "images": [{
+        "id":"1234",
+        "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459320228/craftsvilla_newgrid3_eedmmn.jpg"
+      },
+        {
+          "id":"1234",
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459320227/craftsvilla_newgrid4_yq4qkg.jpg"
+        },
+        {
+          "id":"1234",
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459320227/craftsvilla_newgrid2_rpopxx.jpg"
+        },
+        {
+          "id":"1234",
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459320227/craftsvilla_newgrid1_qzdwj7.jpg"
+        }]
+
+    },{
+      "id":"101",
+      "title": "banner",
+      "bannertype":1,
+      "productType":"Percentage Images",
+      "images": [{
+        "id":"1234",
+        "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1470176118/small_offer4_u0fdxs.png"
+      },
+        {
+          "id":"1234",
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1470176118/small_offer3_lc8cja.png"
+        },
+        {
+          "id":"1234",
+          "image_url": "https://cloudinary.com/console/media_library#dialog/image/upload/small_offer2_qcpuj8"
+        },
+        {
+          "id":"1234",
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1470176117/small_offer1_pvgbku.png"
+        }]
+
+    },
+    {
+      "id":"101",
+      "title": "banner",
+      "bannertype":1,
+      "productType":"SLider Images",
+      "images": [{
+        "id":"1234",
+        "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1470175226/home/slider1.jpg"
+      },
+        {
+          "id":"1234",
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1470175226/home/slider2.jpg"
+        },
+        {
+          "id":"1234",
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459318938/craftsvilla_full3_zpqvtz.jpg"
+        },
+        {
+          "id":"1234",
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459318937/craftsvilla_full2_wmpdrb.jpg"
+        }]
+
+    },
+    {
+      "id":"101",
+      "title": "banner",
+      "bannertype":1,
+      "productType":"Grid",
+      "images": [{
+        "id":"1234",
+        "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459318729/craftsvilla_grid3_xsujou.jpg"
+      },
+        {
+          "id":"1234",
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459318729/craftsvilla_grid1_d8kbda.jpg"
+        },
+        {
+          "id":"1234",
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459318729/craftsvilla_grid4_jypfej.jpg"
+        },
+        {
+          "id":"1234",
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459318728/craftsvilla_full1_beix6x.jpg"
+        },
+        {
+          "id":"1234",
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1470175800/home/offer2.jpg"
+        },
+        {
+          "id":"1234",
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459318728/craftsvilla_grid2_vknkou.jpg"
+        }]
+
+    },
+    {
+      "id":"101",
+      "title": "gender wise",
+      "bannertype":1,
+      "productType":"circular header slider",
+      "images": [{
+        "id":"Men",
+        "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1470774791/circular_top_header/Men-Medium-Length-hairstyles-2013-1.jpg"
+      },
+        {
+          "id":"Women",
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1470774791/circular_top_header/women.jpg"
+        },
+        {
+          "id":"Kids",
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1470774791/circular_top_header/kid.jpg"
+        },
+        {
+          "id":"SHoes",
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1470774792/circular_top_header/shoes.jpg"
+        },
+        {
+          "id":"Home Decor",
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1470774791/circular_top_header/home_decor.jpg"
+        },
+        {
+          "id":"Accessories",
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1470774794/circular_top_header/acessories.jpg"
+        }]
+
+    }]
+}

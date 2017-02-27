@@ -1,0 +1,84 @@
+{
+  "SectionList": [{
+    "sectionTitle": "",
+    "sectionData": [{
+      "banner_type": 5,
+      "id": 123,
+      "name": "Comment",
+      "ImageArray": [{
+        "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729069/slide1_rd98qx.png"
+      }, {
+        "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729061/slide2_wt48jp.pngl"
+      }, {
+        "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729039/slide3_qat9yn.png"
+      }, {
+        "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729069/slide1_rd98qx.png"
+      }, {
+        "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729061/slide2_wt48jp.pngl"
+      }]
+
+    }]
+  }, {
+    "sectionTitle": "Top Category",
+    "sectionData": [{
+      "banner_type": 1,
+      "id": 123,
+      "name": "Comment",
+      "ImageArray": [{
+        "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729024/banner1_vlcbx2.jpg"
+      }]
+
+    }, {
+      "banner_type": 2,
+      "id": 123,
+      "name": "Comment",
+      "ImageArray": [{
+        "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729031/grid1_ibdpsq.png"
+      }, {
+        "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729027/grid3_egrmxz.jpg"
+      }]
+
+    }, {
+      "banner_type": 4,
+      "id": 123,
+      "name": "Comment",
+      "ImageArray": [{
+        "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729029/grid4_n1jikf.jpg"
+      }, {
+        "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729030/grid2_uckiao.png"
+      }, {
+        "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729027/grid3_egrmxz.jpg"
+      }, {
+        "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729031/grid1_ibdpsq.png"
+      }]
+
+    }]
+  }, {
+    "sectionTitle": "Holi",
+    "sectionData": [{
+      "banner_type": 2,
+      "id": 123,
+      "name": "Comment",
+      "ImageArray": [{
+        "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729024/full3_sj9c4s.jpg"
+      }, {
+        "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729024/full2_kqwn9w.jpg"
+      }]
+
+    }, {
+      "banner_type": 4,
+      "id": 123,
+      "name": "Comment",
+      "ImageArray": [{
+        "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729029/grid4_n1jikf.jpg"
+      }, {
+        "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729030/grid2_uckiao.png"
+      }, {
+        "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729027/grid3_egrmxz.jpg"
+      }, {
+        "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729031/grid1_ibdpsq.png"
+      }]
+
+    }]
+  }]
+}

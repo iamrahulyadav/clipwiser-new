@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+        android:viewportWidth="40"
+        android:viewportHeight="40"
+        android:width="40dp"
+        android:height="40dp">
+    <group
+        android:translateX="-17"
+        android:translateY="-22">
+        <group
+            android:translateX="17"
+            android:translateY="22">
+            <!--<path
+                android:pathData="M40 20A20 20 0 0 1 20 40 20 20 0 0 1 0 20 20 20 0 0 1 20 0 20 20 0 0 1 40 20Z"
+                android:strokeWidth="1"
+                android:fillColor="#00000000"
+                android:strokeColor="#000000"
+                android:strokeAlpha="0.1" />-->
+            <group
+                android:translateX="9"
+                android:translateY="11">
+                <path
+                    android:fillColor="#00000000"
+                    android:pathData="M17.351665 1.9599573l4.374107 1.1339228c0.469334 0.1081609 0.761921 0.5758287 0.653708 1.0437123L19.437903 16.856213c-0.108301 0.468266 -0.576868 0.760119 -1.045901 0.652027l-2.499456 -0.889642"
+                    android:strokeWidth="1"
+                    android:strokeColor="#000000"
+                    android:strokeAlpha="0.54" />
+                <path
+                    android:fillColor="#00000000"
+                    android:pathData="M5.1710399 1.9599573L0.79693316 3.0938801C0.32759909 3.202041 0.03501228 3.6697088 0.14322494 4.1375924L3.0848019 16.856213c0.108301 0.468266 0.5768683 0.760119 1.0459008 0.652027l2.4994567 -0.889642"
+                    android:strokeWidth="1"
+                    android:strokeColor="#000000"
+                    android:strokeAlpha="0.54" />
+                <path
+                    android:fillColor="#00000000"
+                    android:pathData="M8.370235 0.50899678l6.150564 0c1.108 0 2 0.89200002 2 2.00000002l0 12.2209602c0 1.108 -0.892 2 -2 2l-6.150564 0c-1.108 0 -2 -0.892 -2 -2l0 -12.2209602c0 -1.108 0.892 -2.00000002 2 -2.00000002z"
+                    android:strokeWidth="1"
+                    android:strokeColor="#000000"
+                    android:strokeAlpha="0.54" />
+            </group>
+        </group>
+    </group>
+
+</vector>

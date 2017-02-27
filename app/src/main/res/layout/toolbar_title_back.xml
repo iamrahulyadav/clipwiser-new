@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    android:id="@+id/toolbarWithTitleAndBack"
+    style="@style/toolbarStyle"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/imageViewBackToolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/ic_back_arrow"
+            />
+
+        <com.clipwiser.views.TextViewBold
+            android:id="@+id/textViewTitleToolbarWithBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/imageViewBackToolbar"
+            android:layout_toEndOf="@+id/imageViewBackToolbar"
+            android:text="Title"
+            android:layout_marginLeft="@dimen/dimen_20dp"
+            android:textColor="@color/colorPrimary"
+            />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.Toolbar>

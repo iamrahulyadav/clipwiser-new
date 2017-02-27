@@ -1,0 +1,84 @@
+{
+	"SectionList": [{
+		"sectionTitle": "",
+		"sectionData": [{
+			"banner_type": 5,
+			"id": 123,
+			"name": "Comment",
+			"ImageArray": [{
+				"image_url": "john"
+			}, {
+				"image_url": "michael"
+			}, {
+				"image_url": "sara"
+			}, {
+				"image_url": "sara"
+			}, {
+				"image_url": "sara"
+			}]
+
+		}]
+	}, {
+		"sectionTitle": "Top Category",
+		"sectionData": [{
+			"banner_type": 1,
+			"id": 123,
+			"name": "Comment",
+			"ImageArray": [{
+				"image_url": "john"
+			}]
+
+		}, {
+			"banner_type": 2,
+			"id": 123,
+			"name": "Comment",
+			"ImageArray": [{
+				"image_url": "john"
+			}, {
+				"image_url": "john"
+			}]
+
+		}, {
+			"banner_type": 4,
+			"id": 123,
+			"name": "Comment",
+			"ImageArray": [{
+				"image_url": "john"
+			}, {
+				"image_url": "john"
+			}, {
+				"image_url": "john"
+			}, {
+				"image_url": "john"
+			}]
+
+		}]
+	}, {
+		"sectionTitle": "Holi",
+		"sectionData": [{
+			"banner_type": 2,
+			"id": 123,
+			"name": "Comment",
+			"ImageArray": [{
+				"image_url": "john"
+			}, {
+				"image_url": "john"
+			}]
+
+		}, {
+			"banner_type": 4,
+			"id": 123,
+			"name": "Comment",
+			"ImageArray": [{
+				"image_url": "john"
+			}, {
+				"image_url": "john"
+			}, {
+				"image_url": "john"
+			}, {
+				"image_url": "john"
+			}]
+
+		}]
+	}]
+}

@@ -1,0 +1,205 @@
+{
+  "SectionList": [
+
+    {
+      "sectionTitle": "SHOP BY GENDER",
+      "sectionData": [{
+        "banner_type": 7,
+        "id": 123,
+        "name": "Comment",
+        "ImageArray": [{
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1470774791/circular_top_header/Men-Medium-Length-hairstyles-2013-1.jpg"
+        }, {
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1470175800/home/offer2.jpg"
+        }, {
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1470774791/circular_top_header/kid.jpg"
+        }, {
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1470175800/home/offer5.jpg"
+        }
+        ]
+
+      }]
+    },
+    {
+      "sectionTitle": "SHOP BY PERCENTAGE",
+      "sectionData": [{
+        "banner_type": 8,
+        "id": 12314,
+        "name": "Comment",
+        "ImageArray": [{
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1470176118/small_offer4_u0fdxs.png"
+        }, {
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1470176118/small_offer3_lc8cja.png"
+        }, {
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1470176117/small_offer2_qcpuj8.png"
+        }, {
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1470176117/small_offer1_pvgbku.png"
+        }
+        ]
+
+      }]
+    },
+    {
+      "sectionTitle": "",
+      "sectionData": [{
+        "banner_type": 5,
+        "id": 123,
+        "name": "Comment",
+        "ImageArray": [{
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1470175207/home/banner1.jpg"
+        }, {
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1470175209/home/banner2.jpg"
+        }, {
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1470175226/home/slider2.jpg"
+        }, {
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459318938/craftsvilla_full3_zpqvtz.jpg"
+        }, {
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729023/banner4_bp3t50.jpg"
+        }]
+
+      }]
+    },
+    {
+      "sectionTitle": "DEALS",
+      "sectionData": [{
+        "banner_type": 4,
+        "id": 123,
+        "name": "Comment",
+        "ImageArray": [{
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459320228/craftsvilla_newgrid3_eedmmn.jpg"
+        }, {
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459320227/craftsvilla_newgrid4_yq4qkg.jpg"
+        }, {
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459320227/craftsvilla_newgrid2_rpopxx.jpg"
+        }, {
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459320227/craftsvilla_newgrid1_qzdwj7.jpg"
+        }]
+
+      }]
+    },
+    {
+      "sectionTitle": "POPULAR ON CRAFTSVILLA",
+      "sectionData": [
+        {
+          "banner_type": 4,
+          "id": 123,
+          "name": "Comment",
+          "ImageArray": [{
+            "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459318729/craftsvilla_grid3_xsujou.jpg"
+          }, {
+            "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459318729/craftsvilla_grid1_d8kbda.jpg"
+          }, {
+            "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459318729/craftsvilla_grid4_jypfej.jpg"
+          }, {
+            "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459318728/craftsvilla_grid2_vknkou.jpg"
+          }]
+
+        },
+        {
+          "banner_type": 1,
+          "id": 123,
+          "name": "Comment",
+          "ImageArray": [{
+            "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459318728/craftsvilla_full1_beix6x.jpg"
+          }]
+
+        }, {
+          "banner_type": 5,
+          "id": 123,
+          "name": "Comment",
+          "ImageArray": [{
+            "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459318729/craftsvilla_grid3_xsujou.jpg"
+          }, {
+            "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459318729/craftsvilla_grid1_d8kbda.jpg"
+          }, {
+            "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459318729/craftsvilla_grid4_jypfej.jpg"
+          }, {
+            "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459318728/craftsvilla_grid2_vknkou.jpg"
+          }]
+
+        }]
+    }, {
+      "sectionTitle": "CATEGORIES",
+      "sectionData": [{
+        "banner_type": 4,
+        "id": 123,
+        "name": "Comment",
+        "ImageArray": [{
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459318731/craftsvilla_banner1_cjn9sm.jpg"
+        }, {
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729005/banner1_pm3gs7.jpg"
+        }, {
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729023/banner4_bp3t50.jpg"
+        }, {
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459318940/craftsvilla_banner3_ruuasd.jpg"
+        }
+        ]
+
+      }]
+    }, {
+      "sectionTitle": "SHOP BY COLOR",
+      "sectionData": [{
+        "banner_type": 1,
+        "id": 123,
+        "name": "Comment",
+        "ImageArray": [{
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729024/banner1_vlcbx2.jpg"
+        }]
+
+      }, {
+        "banner_type": 4,
+        "id": 123,
+        "name": "Comment",
+        "ImageArray": [{
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729029/grid4_n1jikf.jpg"
+        },
+          {
+            "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729031/grid1_ibdpsq.png"
+          }]
+
+      }, {
+        "banner_type": 5,
+        "id": 123,
+        "name": "Comment",
+        "ImageArray": [{
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729029/grid4_n1jikf.jpg"
+        },
+          {
+            "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729031/grid1_ibdpsq.png"
+          },{
+            "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729031/grid1_ibdpsq.png"
+          },{
+            "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729029/grid4_n1jikf.jpg"
+          }]
+
+      }]
+    }, {
+      "sectionTitle": "DISCOUNT",
+      "sectionData": [{
+        "banner_type": 1,
+        "id": 123,
+        "name": "Comment",
+        "ImageArray": [{
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729029/grid4_n1jikf.jpg"
+        },
+          {
+            "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1458729031/grid1_ibdpsq.png"
+          }]
+
+      }, {
+        "banner_type": 4,
+        "id": 123,
+        "name": "Comment",
+        "ImageArray": [{
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459320228/craftsvilla_newgrid3_eedmmn.jpg"
+        }, {
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459320227/craftsvilla_newgrid4_yq4qkg.jpg"
+        }, {
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459320227/craftsvilla_newgrid2_rpopxx.jpg"
+        }, {
+          "image_url": "http://res.cloudinary.com/dnjoggd9h/image/upload/v1459320227/craftsvilla_newgrid1_qzdwj7.jpg"
+        }]
+
+      }]
+    }]
+}

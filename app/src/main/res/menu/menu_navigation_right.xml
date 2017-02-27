@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/rightmenu_group1" android:checkableBehavior="single">
+
+    <item
+            android:id="@+id/right_nav_acc"
+            android:title="My Account" />
+        <item
+            android:id="@+id/right_nav_order"
+            android:title="My Orders" />
+        <item
+            android:id="@+id/right_nav_wishlist"
+            android:title="My Wishlist" />
+
+        <item
+            android:id="@+id/right_nav_cart"
+            android:title="My Cart" />
+
+        <item
+            android:id="@+id/right_nav_collection"
+            android:title="My Collections" />
+
+
+    </group>
+
+    <group android:id="@+id/rightmenu_group3" android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/right_nav_share"
+            android:title="Share" />
+        <item
+            android:id="@+id/right_nav_rate"
+            android:title="Rate Us" />
+    </group>
+
+</menu>

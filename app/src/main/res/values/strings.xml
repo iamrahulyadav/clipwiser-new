@@ -1,0 +1,130 @@
+<resources>
+    <string name="app_name">ClipWiser New</string>
+
+    <string name="facebook_app_id">142552362906425</string>
+
+
+    <!--MENU-->
+    <string name="action_search">Search</string>
+    <string name="action_all">All</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="ok">OK</string>
+    <string name="no_internet">No internet connection</string>
+    <string name="data_not_available">Data Not Avaiable</string>
+    <string name="google_server_client_id">128953643020-fg0f5a36876n8uiafsdhn690ln56vo7o.apps.googleusercontent.com</string>
+    <string name="skip">SKIP</string>
+    <string name="login_using">LOGIN USING</string>
+    <string name="we_donot_post">We do not post on your behalf</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+    <string name="or_using_email"> - OR USING EMAIL - </string>
+    <string name="login_or_register">Sign in / Sign up</string>
+    <string name="join_to_mybasket">JOIN TO MY BASKET</string>
+    <string name="login">LOGIN</string>
+    <string name="signup">SIGN UP</string>
+    <string name="newuserUser">New User? Sign Up</string>
+    <string name="existing_user">Already Register? Login</string>
+    <string name="minimum_password">minum 6 digit</string>
+    <string name="auth_failed">Authentication Failed</string>
+    <string name="forgot_pwd">Forgot Password</string>
+    <string name="reset">Reset</string>
+    <string name="email">Email</string>
+    <string name="something_went_wrong">Something Went Wrong</string>
+    <string name="splash_message">Enjoy shopping with spcart</string>
+    <string name="set_password">Set Password</string>
+    <string name="fullname">Full Name</string>
+    <string name="mobile_no_orderupdates">Mobile Number ( for order updates)</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="signin">Sign In</string>
+    <string name="filter">FILTER</string>
+    <string name="sort">SORT</string>
+    <string name="account">Account</string>
+    <string name="apply">APPLY</string>
+    <string name="clear">Clear</string>
+    <string name="action_settings">setting</string>
+    <string name="myProfile">My Profile</string>
+    <string name="wishlist">Wishlist</string>
+    <string name="recentlyviewed">Recently Viewed</string>
+    <string name="demo_product_name">Product detail</string>
+    <string name="sold_by">Sold by</string>
+    <string name="demo_price">1120</string>
+    <string name="dummy_regularprice">1111</string>
+    <string name="dummy_save_percentage">save 20%</string>
+    <string name="info">info</string>
+    <string name="DELIVERY_INFO">DELIVERY INFO</string>
+    <string name="transition_string">transition_string</string>
+    <string name="cancel_order">Cancel Order</string>
+    <string name="move_to_cart">Move To Cart</string>
+    <string name="similar_product">SImilar Products</string>
+    <string name="rating">Rating</string>
+    <string name="rating_value">4.5</string>
+    <string name="feedback">Feedback</string>
+    <string name="orders">Orders</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="save_to">SAVE TO</string>
+
+
+    <array name="menTshirt">
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174202/shirts/shirt1.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174202/shirts/shirt2.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174202/shirts/shirt3.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174202/shirts/shirt4.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174202/shirts/shirt5.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174202/shirts/shirt6.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174202/shirts/shirt7.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174202/shirts/shirt8.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174202/shirts/shirt9.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174202/shirts/shirt10.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174202/shirts/shirt11.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174202/shirts/shirt12.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174202/shirts/shirt13.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174202/shirts/shirt14.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174202/shirts/shirt15.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174202/shirts/shirt16.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174202/shirts/shirt17.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174202/shirts/shirt18.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174202/shirts/shirt19.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174202/shirts/shirt20.jpg</item>
+    </array>
+
+    <array name="womenTops">
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174992/tops/tops1.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174992/tops/tops2.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174992/tops/tops3.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174992/tops/tops4.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174992/tops/tops5.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174992/tops/tops6.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174992/tops/tops7.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174992/tops/tops8.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174992/tops/tops9.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174992/tops/tops10.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174992/tops/tops11.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174992/tops/tops12.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174992/tops/tops2.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174992/tops/tops2.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174992/tops/tops2.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174992/tops/tops2.jpg</item>
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470174992/tops/tops2.jpg</item>
+    </array>
+
+    <!--12 jeans 1 to 12-->
+    <array name="menJeans">
+    <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470175064/jeans/jeans10.jpg</item>
+</array>
+
+    <!--12 kurta 1 to 12-->
+    <array name="womenKurta">
+        <item>http://res.cloudinary.com/dnjoggd9h/image/upload/v1470175122/kurta/kurta2.jpg</item>
+    </array>
+
+    <array name="bannerDataWelcome">
+        <item>Buy products online using SP Cart with 100 % genuin Products</item>
+        <item>Sp Cart Provides 100 % return gurrenty and Quick Delivery System</item>
+        <item>Choose all types of product with 1000 Brands only in SP Cart</item>
+        <item>SP cart Provides the best brands in market with less price compared to Other online Shop</item>
+        <item>10,000 Orders placed Successfully within one Months and user satisfication</item>
+    </array>
+
+</resources>

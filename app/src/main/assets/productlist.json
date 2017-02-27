@@ -1,0 +1,154 @@
+{
+  "status":0,
+  "message":"Data is there",
+  "data":[
+    {
+      "productId":"101",
+      "productName":"Product",
+      "regularPrice":"100",
+      "offerPrice":"50",
+      "isAddToCart" : false,
+      "imageUrl":"abc.jpg"
+    },{
+      "productId":"101",
+      "productName":"Product",
+      "regularPrice":"100",
+      "offerPrice":"50",
+      "isAddToCart" : false,
+      "imageUrl":"abc.jpg"
+    },{
+      "productId":"101",
+      "productName":"Product",
+      "regularPrice":"100",
+      "offerPrice":"50",
+      "isAddToCart" : false,
+      "imageUrl":"abc.jpg"
+    },{
+      "productId":"101",
+      "productName":"Product",
+      "regularPrice":"100",
+      "offerPrice":"50",
+      "isAddToCart" : false,
+      "imageUrl":"abc.jpg"
+    },{
+      "productId":"101",
+      "productName":"Product",
+      "regularPrice":"100",
+      "offerPrice":"50",
+      "isAddToCart" : false,
+      "imageUrl":"abc.jpg"
+    },{
+      "productId":"101",
+      "productName":"Product",
+      "regularPrice":"100",
+      "offerPrice":"50",
+      "isAddToCart" : false,
+      "imageUrl":"abc.jpg"
+    },{
+      "productId":"101",
+      "productName":"Product",
+      "regularPrice":"100",
+      "offerPrice":"50",
+      "isAddToCart" : false,
+      "imageUrl":"abc.jpg"
+    },{
+      "productId":"101",
+      "productName":"Product",
+      "regularPrice":"100",
+      "offerPrice":"50",
+      "isAddToCart" : false,
+      "imageUrl":"abc.jpg"
+    },{
+      "productId":"101",
+      "productName":"Product",
+      "regularPrice":"100",
+      "offerPrice":"50",
+      "isAddToCart" : false,
+      "imageUrl":"abc.jpg"
+    },{
+      "productId":"101",
+      "productName":"Product",
+      "regularPrice":"100",
+      "offerPrice":"50",
+      "isAddToCart" : false,
+      "imageUrl":"abc.jpg"
+    },{
+      "productId":"101",
+      "productName":"Product",
+      "regularPrice":"100",
+      "offerPrice":"50",
+      "isAddToCart" : false,
+      "imageUrl":"abc.jpg"
+    },{
+      "productId":"101",
+      "productName":"Product",
+      "regularPrice":"100",
+      "offerPrice":"50",
+      "isAddToCart" : false,
+      "imageUrl":"abc.jpg"
+    },{
+      "productId":"101",
+      "productName":"Product",
+      "regularPrice":"100",
+      "offerPrice":"50",
+      "isAddToCart" : false,
+      "imageUrl":"abc.jpg"
+    },{
+      "productId":"101",
+      "productName":"Product",
+      "regularPrice":"100",
+      "offerPrice":"50",
+      "isAddToCart" : false,
+      "imageUrl":"abc.jpg"
+    },{
+      "productId":"101",
+      "productName":"Product",
+      "regularPrice":"100",
+      "offerPrice":"50",
+      "isAddToCart" : false,
+      "imageUrl":"abc.jpg"
+    },{
+      "productId":"101",
+      "productName":"Product",
+      "regularPrice":"100",
+      "offerPrice":"50",
+      "isAddToCart" : false,
+      "imageUrl":"abc.jpg"
+    },{
+      "productId":"101",
+      "productName":"Product",
+      "regularPrice":"100",
+      "offerPrice":"50",
+      "isAddToCart" : false,
+      "imageUrl":"abc.jpg"
+    },{
+      "productId":"101",
+      "productName":"Product",
+      "regularPrice":"100",
+      "offerPrice":"50",
+      "isAddToCart" : false,
+      "imageUrl":"abc.jpg"
+    },{
+      "productId":"101",
+      "productName":"Product",
+      "regularPrice":"100",
+      "offerPrice":"50",
+      "isAddToCart" : false,
+      "imageUrl":"abc.jpg"
+    },{
+      "productId":"101",
+      "productName":"Product",
+      "regularPrice":"100",
+      "offerPrice":"50",
+      "isAddToCart" : false,
+      "imageUrl":"abc.jpg"
+    },{
+      "productId":"101",
+      "productName":"Product",
+      "regularPrice":"100",
+      "offerPrice":"50",
+      "isAddToCart" : false,
+      "imageUrl":"abc.jpg"
+    }
+  ]
+}

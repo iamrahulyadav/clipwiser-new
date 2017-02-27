@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/relativeRootSignin"
+                style="@style/layout_normal"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:animateLayoutChanges="true"
+                android:background="@android:color/transparent"
+    >
+
+    <include
+        android:id="@+id/includeLogin"
+        layout="@layout/toolbar_title_back"/>
+
+    <ScrollView
+        style="@style/layout_normal"
+        android:layout_below="@+id/includeLogin"
+        android:padding="@dimen/dimen_0dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <com.clipwiser.views.TextViewBold
+                style="@style/textStyle_normal"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:text="@string/join_to_mybasket"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include
+                    layout="@layout/include_loginsigup"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1dp"
+                android:alpha="0.3"
+                android:background="@color/color_8a000000"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:background="@drawable/boarder_gray_one_dp"
+                android:orientation="vertical"
+                >
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/editTextEmailSignIn"
+                    style="@style/edittext_style_norml"
+                    android:layout_marginBottom="@dimen/dimen_5dp"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:drawableRight="@drawable/user_icon"
+                    android:hint="Email"
+                    android:text="spm@spm.com"
+                    android:layout_height="@dimen/dimen_50dp"
+                    android:background="@android:color/transparent"
+                    />
+
+                <View
+                    android:id="@+id/viewLineEmailSignIn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_1dp"
+                    android:background="@color/color_D3D3D3"
+                    />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/editTextPwdSignIn"
+                    style="@style/edittext_style_norml"
+                    android:layout_height="@dimen/dimen_50dp"
+                    android:background="@android:color/transparent"
+                    android:layout_marginBottom="@dimen/dimen_5dp"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:drawableRight="@drawable/lock_icon"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:text="123456"
+                    />
+
+                <View
+                    android:id="@+id/viewLinePwdSignIn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_1dp"
+                    android:background="@color/color_D3D3D3"
+                    />
+
+                <com.clipwiser.views.SpCompatButton
+                    android:id="@+id/buttonSignInMain"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_44dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:background="@drawable/btn_selector"
+                    android:gravity="center"
+                    android:text="@string/login"
+                    android:textColor="@android:color/white"
+                    />
+
+                <com.clipwiser.views.custom_progressbar.SmoothProgressBar
+                    android:id="@+id/smoothProgressbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginEnd="@dimen/dimen_10dp"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:layout_marginRight="@dimen/dimen_10dp"
+                    android:layout_marginStart="@dimen/dimen_10dp"
+                    android:indeterminate="true"
+                    android:indeterminateOnly="false"
+                    android:visibility="invisible"
+                    android:progressDrawable="@drawable/smooth_progressbar_drawable"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                >
+
+                <com.clipwiser.views.TextViewRegular
+                    android:id="@+id/textViewForgotPwdLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="20dp"
+                    android:text="Forgot Password"
+                    />
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@android:color/white"
+                    />
+
+
+                <com.clipwiser.views.TextViewRegular
+                    android:id="@+id/textViewSignUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:paddingLeft="@dimen/dimen_20dp"
+                    android:text="@string/newuserUser"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
