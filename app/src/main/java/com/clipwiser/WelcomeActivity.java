@@ -17,7 +17,6 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.clipwiser.account.FacebookManager;
-import com.clipwiser.account.GoogleSignInManager;
 import com.clipwiser.account.LoginDialogFragment;
 import com.clipwiser.account.SignupDialogFragment;
 import com.clipwiser.activity.HomeActivity;
@@ -31,12 +30,10 @@ import com.clipwiser.views.viewpager_transformation.AccordionTransformer;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
-public class WelcomeActivity extends BaseActivity implements BaseActivity.OnNavigationClick, GoogleSignInManager.OnGoogleSignInListener, FacebookManager.OnFacebookLoginSuccessListener, SignInSIgnupCLickListener {
+public class WelcomeActivity extends BaseActivity implements BaseActivity.OnNavigationClick, FacebookManager.OnFacebookLoginSuccessListener, SignInSIgnupCLickListener {
 
     private static final String TAG = "WelcomeActivity";
 
@@ -92,6 +89,8 @@ public class WelcomeActivity extends BaseActivity implements BaseActivity.OnNavi
         viewpagerImageSlidingWelcome.setPageTransformer(true, new AccordionTransformer());
 
 
+        buttonSignIn.setOnClickListener(this);
+        buttonSignUp.setOnClickListener(this);
         textViewSkipWelcome.setOnClickListener(this);
 
         showSplashDialog();
@@ -101,7 +100,7 @@ public class WelcomeActivity extends BaseActivity implements BaseActivity.OnNavi
             public void run() {
                 hideSplashDialog();
                 /*if(! PreferenceManager.getInstance( WelcomeActivity.this ).isUserLoggedIn()) {
-					hideSplashDialog();
+                    hideSplashDialog();
 					showLoginDialog();
 				}
 				else {
@@ -121,34 +120,8 @@ public class WelcomeActivity extends BaseActivity implements BaseActivity.OnNavi
 
     @OnClick(R.id.buttonGoogle)
     protected void onGoogleLoginClick() {
-        GoogleSignInManager.getInstance(WelcomeActivity.this).signIn(this);
+//        GoogleSignInManager.getInstance(WelcomeActivity.this).signIn(this);
     }
-
-
-    @OnClick(R.id.buttonSignIn)
-    protected void showLoginDialog() {
-        Log.i(TAG, "showLoginDialog: ");
-        fragment = new LoginDialogFragment().newInstance(0, true);
-        try {
-            fragment.show(getSupportFragmentManager(), Constants.Dialogs.SPLASH);
-        } catch (IllegalStateException e) {
-            Toast.makeText(this, R.string.something_went_wrong, Toast
-                    .LENGTH_SHORT).show();
-        }
-    }
-
-    @OnClick(R.id.buttonSignUp)
-    protected void showSignUpDialog() {
-        Log.i(TAG, "showSignUpDialog: ");
-        fragment = new SignupDialogFragment().newInstance(0, true);
-        try {
-            fragment.show(getSupportFragmentManager(), Constants.Dialogs.SPLASH);
-        } catch (IllegalStateException e) {
-            Toast.makeText(this, R.string.something_went_wrong, Toast
-                    .LENGTH_SHORT).show();
-        }
-    }
-
 
 
     protected void showSplashDialog() {
@@ -275,9 +248,16 @@ public class WelcomeActivity extends BaseActivity implements BaseActivity.OnNavi
             case android.R.id.home:
                 mDrawerLayout.openDrawer(GravityCompat.END);
                 break;
-            case R.id.textViewSkipWelcome :
+            case R.id.textViewSkipWelcome:
                 startActivity(new Intent(this, HomeActivity.class));
                 break;
+            case R.id.buttonSignUp:
+                showLoginDialog();
+                break;
+            case R.id.buttonSignIn:
+                showSignUpDialog();
+                break;
+
         }
     }
 
@@ -298,7 +278,7 @@ public class WelcomeActivity extends BaseActivity implements BaseActivity.OnNavi
         super.onActivityResult(requestCode, resultCode, data);
         try {
             if (requestCode == Constants.ActivityRequestCodes.RC_SIGN_IN) {
-                GoogleSignInManager.getInstance(WelcomeActivity.this).onActivityResult(requestCode, resultCode, data, this);
+
             } else {
                 FacebookManager.getInstance(WelcomeActivity.this).onActivityResult(requestCode, resultCode, data);
             }
@@ -318,21 +298,33 @@ public class WelcomeActivity extends BaseActivity implements BaseActivity.OnNavi
     }
 
     @Override
-    public void onGoogleTokenReceived(String token, String name, String email) {
-        CommonUtils.showSnackBar(activity_welcome, "Google token " + token + " Name " + name + " email " + email, Snackbar.LENGTH_SHORT);
-    }
-
-    @Override
-    public void onGoogleFailed() {
-        CommonUtils.showSnackBar(activity_welcome, "Google Sign In Faliled ", Snackbar.LENGTH_SHORT);
-    }
-
-    @Override
     public void onSignInOrSignupClick(boolean isSignin) {
         if (isSignin) {
             showLoginDialog();
         } else {
             showSignUpDialog();
+        }
+    }
+
+    private void showLoginDialog() {
+        Log.i(TAG, "showSignUpDialog: ");
+        fragment = new SignupDialogFragment().newInstance(0, true);
+        try {
+            fragment.show(getSupportFragmentManager(), Constants.Dialogs.SPLASH);
+        } catch (IllegalStateException e) {
+            Toast.makeText(this, R.string.something_went_wrong, Toast
+                    .LENGTH_SHORT).show();
+        }
+    }
+
+    private void showSignUpDialog() {
+        Log.i(TAG, "showLoginDialog: ");
+        fragment = new LoginDialogFragment().newInstance(0, true);
+        try {
+            fragment.show(getSupportFragmentManager(), Constants.Dialogs.SPLASH);
+        } catch (IllegalStateException e) {
+            Toast.makeText(this, R.string.something_went_wrong, Toast
+                    .LENGTH_SHORT).show();
         }
     }
 }

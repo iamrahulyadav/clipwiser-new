@@ -39,7 +39,6 @@ import com.clipwiser.interfaces.SignInSIgnupCLickListener;
 import com.clipwiser.utils.CommonUtils;
 import com.clipwiser.utils.Constants;
 import com.clipwiser.views.custom_progressbar.SmoothProgressBar;
-import com.google.firebase.auth.FirebaseAuth;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -48,7 +47,7 @@ import butterknife.OnClick;
 /**
  * Created by Sibaprasad on 4/2/2016.
  */
-public class LoginDialogFragment extends DialogFragment implements GoogleSignInManager.OnGoogleSignInListener, FacebookManager.OnFacebookLoginSuccessListener {
+public class LoginDialogFragment extends DialogFragment implements  FacebookManager.OnFacebookLoginSuccessListener {
 
     private static final int REQUEST_CODE_ASK_PERMISSIONS = 9999;
     public static String TAG = "Signin";
@@ -111,7 +110,6 @@ public class LoginDialogFragment extends DialogFragment implements GoogleSignInM
     private String strEmail;
     private String strPwd;
     //FIREBASE
-    private FirebaseAuth auth;
     private Animation animation;
 
     public static LoginDialogFragment newInstance(int fromWhichScreen, boolean isLoginScreen) {
@@ -138,13 +136,12 @@ public class LoginDialogFragment extends DialogFragment implements GoogleSignInM
         View rootview = inflater.inflate(R.layout.fragment_login, container, false);
         ButterKnife.bind(this, rootview);
 
-        relativelayoutLoginSignupCOntainer.setVisibility(View.GONE);
+
         //Get Firebase auth instance
 //		auth = FirebaseAuth.getInstance();
 
-        init(rootview);
-
-        askRuntimePermission();
+    //    init(rootview);
+  //      askRuntimePermission();
 
         // get bundle values
         if (getArguments() != null) {
@@ -164,7 +161,7 @@ public class LoginDialogFragment extends DialogFragment implements GoogleSignInM
 
         return rootview;
     }
-
+/*
     @OnClick(R.id.buttonFacebook)
     protected void onFacebookLoginClick() {
         FacebookManager.getInstance(getActivity()).login(this, this);
@@ -172,7 +169,6 @@ public class LoginDialogFragment extends DialogFragment implements GoogleSignInM
 
     @OnClick(R.id.buttonGoogle)
     protected void onGoogleLoginClick() {
-        GoogleSignInManager.getInstance(getActivity()).signIn(this);
     }
 
     @OnClick(R.id.textViewForgotPwdLogin)
@@ -214,11 +210,11 @@ public class LoginDialogFragment extends DialogFragment implements GoogleSignInM
     @OnClick(R.id.imageViewBackToolbar)
     protected void onBackImageClick() {
         dismiss();
-    }
+    }*/
 
     private void init(View rootview) {
         relativeRootSignin = (RelativeLayout) rootview.findViewById(R.id.relativeRootSignin);
-        textViewForgotPwdLogin = (AppCompatTextView) rootview.findViewById(R.id.editTextEmailSignIn);
+        textViewForgotPwdLogin = (AppCompatTextView) rootview.findViewById(R.id.textViewForgotPwdLogin);
         viewLineEmailSignIn = rootview.findViewById(R.id.viewLineEmailSignIn);
         editTextPwdSignIn = (AppCompatEditText) rootview.findViewById(R.id.editTextPwdSignIn);
         viewLinePwdSignIn = rootview.findViewById(R.id.viewLinePwdSignIn);
@@ -234,33 +230,9 @@ public class LoginDialogFragment extends DialogFragment implements GoogleSignInM
         textViewTitleToolbarWithBack = (AppCompatTextView) rootview.findViewById(R.id.textViewTitleToolbarWithBack);
 
         textViewTitleToolbarWithBack.setText(getString(R.string.signin));
-        editTextEmailSignIn.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    viewLineEmailSignIn.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorPrimaryDark));
-                    viewLineEmailSignIn.setVisibility(View.VISIBLE);
-                    viewLineEmailSignIn.startAnimation(animation);
-                    viewLinePwdSignIn.setBackgroundColor(Color.parseColor("#d3d3d3"));
-                } else {
-                    viewLineEmailSignIn.setBackgroundColor(Color.parseColor("#d3d3d3"));
-                }
-            }
-        });
 
-        editTextPwdSignIn.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                if (hasFocus) {
-                    viewLinePwdSignIn.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.colorPrimaryDark));
-                    viewLinePwdSignIn.setVisibility(View.VISIBLE);
-                    viewLinePwdSignIn.startAnimation(animation);
-                    viewLineEmailSignIn.setBackgroundColor(Color.parseColor("#d3d3d3"));
-                } else {
-                    viewLinePwdSignIn.setBackgroundColor(Color.parseColor("#d3d3d3"));
-                }
-            }
-        });
+
+
     }
 
     @Override
@@ -303,76 +275,7 @@ public class LoginDialogFragment extends DialogFragment implements GoogleSignInM
 
 
 
-	/*@Override
-    public void onClick( View view ) {
-		switch ( view.getId() ){
-			case R.id.buttonSignIn :
-				strEmail = editTextEmailSignIn.getText().toString().trim();
-				strPwd = editTextEmailSignIn.getText().toString().trim();
-				smoothProgressbar.setVisibility( View.VISIBLE );
-				if(isLoginScreen){
-					//authenticate user
-					auth.signInWithEmailAndPassword(strEmail, strPwd)
-							.addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
-								@Override
-								public void onComplete(@NonNull Task<AuthResult> task) {
-									// If sign in fails, display a message to the user. If sign in succeeds
-									// the auth state listener will be notified and logic to handle the
-									// signed in user can be handled in the listener.
-									smoothProgressbar.setVisibility(View.GONE);
-									if (!task.isSuccessful()) {
-										// there was an error
-										if (strEmail.length() < 6) {
 
-										} else {
-											Toast.makeText( getActivity(), getString( R.string.auth_failed), Toast.LENGTH_LONG).show();
-										}
-									} else {
-										Intent intentHome = new Intent( getActivity(), HomeActivity.class);
-										startActivity( intentHome );
-										getActivity().finish();
-									}
-								}
-							});
-				}
-				else {
-					//create user
-					auth.createUserWithEmailAndPassword(strEmail, strPwd)
-							.addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
-								@Override
-								public void onComplete(@NonNull Task<AuthResult> task) {
-									Toast.makeText(getActivity(), "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
-									smoothProgressbar.setVisibility(View.GONE);
-									// If sign in fails, display a message to the user. If sign in succeeds
-									// the auth state listener will be notified and logic to handle the
-									// signed in user can be handled in the listener.
-									if (!task.isSuccessful()) {
-										Log.i( TAG, "onComplete: "+task.getException() );
-										Toast.makeText(getActivity(), "Authentication failed." + task.getException(),
-										               Toast.LENGTH_SHORT).show();
-									} else {
-										Log.i( TAG, "onComplete: 123" );
-										Intent intentHome = new Intent(getActivity(),HomeActivity.class);
-										startActivity( intentHome );
-										getActivity().finish();
-									}
-								}
-							});
-				}
-
-				break;
-			case R.id.textViewForgotPwdLogin :
-				InputMethodManager inputMethodManager =
-						(InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-				inputMethodManager.toggleSoftInputFromWindow(
-						textViewForgotPwdLogin.getApplicationWindowToken(),
-						InputMethodManager.SHOW_FORCED, 0);
-				showBottomSheetForgotPwd();
-				break;
-
-
-		}
-	}*/
 
     private void showBottomSheetForgotPwd() {
 
@@ -439,7 +342,7 @@ public class LoginDialogFragment extends DialogFragment implements GoogleSignInM
 
         if (requestCode == Constants.ActivityRequestCodes.RC_SIGN_IN) {
             Log.i(TAG, "onActivityResult: google ");
-            GoogleSignInManager.getInstance(getContext()).onActivityResult(requestCode, resultCode, data, this);
+//            GoogleSignInManager.getInstance(getContext()).onActivityResult(requestCode, resultCode, data, this);
         } else {
             Log.i(TAG, "onActivityResult: facebook ");
             FacebookManager.getInstance(getActivity()).onActivityResult(requestCode, resultCode, data);
@@ -458,15 +361,7 @@ public class LoginDialogFragment extends DialogFragment implements GoogleSignInM
 
     }
 
-    @Override
-    public void onGoogleTokenReceived(String token, String name, String email) {
-        Log.i(TAG, "onGoogleTokenReceived: " + token);
-    }
 
-    @Override
-    public void onGoogleFailed() {
-
-    }
 //=============================== END READ PERMISSION FOR GET ACCOUNTS==============================
 // hit the social api when GOOGLE access token recieved
 

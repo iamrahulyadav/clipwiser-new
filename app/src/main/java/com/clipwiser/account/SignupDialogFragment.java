@@ -38,248 +38,168 @@ import com.clipwiser.WelcomeActivity;
 import com.clipwiser.utils.CommonUtils;
 import com.clipwiser.utils.Constants;
 import com.clipwiser.views.custom_progressbar.SmoothProgressBar;
-import com.google.firebase.auth.FirebaseAuth;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
  * Created by Sibaprasad on 4/2/2016.
  */
-public class SignupDialogFragment  extends DialogFragment implements View.OnClickListener {
+public class SignupDialogFragment extends DialogFragment implements View.OnClickListener {
 
-	public static String TAG = "Signup";
-	private static final int REQUEST_CODE_ASK_PERMISSIONS = 9999;
-	private Context           context;
+    private static final int REQUEST_CODE_ASK_PERMISSIONS = 9999;
+    public static String TAG = "Signup";
+    LinearLayout linearLayoutRootSignup;
+    AppCompatEditText editTextEmailSignup;
+    View viewLineEmailSignup;
+    AppCompatEditText editTextPwdSignup;
+    int viewLinePwdSignup;
 
+    //FIREBASE
 
-	//=========OTHER CONSTANTS============
-	private int fromWhichScreen = 0;
-	private boolean isLoginScreen = false;
-	private String strEmail;
-	private String strPwd;
+    //Widgets Initializaion using Buffer knife
+    AppCompatEditText editTextFullNameSignup;
+    View viewLineNameSignup;
+    AppCompatEditText editTextMobileSignup;
+    View viewLineMobileSignup;
+    RadioGroup radioGroupGender;
+    RadioButton radiobuttonFemale;
+    RadioButton radiobuttonMale;
+    AppCompatImageView imageViewBackToolbar;
+    AppCompatTextView textViewTitleToolbarWithBack;
+    SmoothProgressBar smoothProgressbarSignup;
+    AppCompatButton buttonSignUp;
+    private Context context;
+    //=========OTHER CONSTANTS============
+    private int fromWhichScreen = 0;
+    private boolean isLoginScreen = false;
+    private String strEmail;
+    private String strPwd;
+    private Animation animation;
 
-	//FIREBASE
-	private FirebaseAuth auth;
+    public static SignupDialogFragment newInstance(int fromWhichScreen, boolean isLoginScreen) {
 
-	//Widgets Initializaion using Buffer knife
+        Bundle args = new Bundle();
+        args.putInt(Constants.BundleKeys.FROM_WHICH_SCREEN, fromWhichScreen);
+        args.putBoolean(Constants.BundleKeys.LOGIN_SCREEN, isLoginScreen);
+        SignupDialogFragment fragmentLogIn = new SignupDialogFragment();
+        fragmentLogIn.setArguments(args);
+        Log.i(TAG, "newInstance: " + fromWhichScreen);
+        return fragmentLogIn;
+    }
 
-	@BindView( R.id.linearLayoutRootSignup )
-	LinearLayout linearLayoutRootSignup;
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setStyle(STYLE_NO_FRAME, R.style.SplashScreenDialogTheme);
+        animation = AnimationUtils.loadAnimation(getActivity(), R.anim.et_anim);
+    }
 
-	@BindView(R.id.editTextEmailSignup)
-	AppCompatEditText editTextEmailSignup;
-
-	@BindView(R.id.viewLineEmailSignup)
-	View viewLineEmailSignup;
-
-	@BindView(R.id.editTextPwdSignup)
-	AppCompatEditText editTextPwdSignup;
-
-	@BindView(R.id.viewLinePwdSignup)
-	View viewLinePwdSignup;
-
-	@BindView(R.id.editTextFullNameSignup)
-	AppCompatEditText editTextFullNameSignup;
-
-	@BindView(R.id.viewLineNameSignup)
-	View viewLineNameSignup;
-
-	@BindView(R.id.editTextMobileSignup)
-	AppCompatEditText editTextMobileSignup;
-
-	@BindView(R.id.viewLineMobileSignup)
-	View viewLineMobileSignup;
-
-	@BindView(R.id.radioGroupGender)
-	RadioGroup radioGroupGender;
-
-	@BindView(R.id.radiobuttonFemale)
-	RadioButton radiobuttonFemale;
-
-	@BindView(R.id.radiobuttonMale)
-	RadioButton radiobuttonMale;
-
-	@BindView( R.id.imageViewBackToolbar )
-	AppCompatImageView imageViewBackToolbar;
-
-	@BindView( R.id.textViewTitleToolbarWithBack )
-	AppCompatTextView textViewTitleToolbarWithBack;
-
-	@BindView( R.id.smoothProgressbarSignup )
-	SmoothProgressBar smoothProgressbarSignup;
-
-	@BindView( R.id.buttonSignUp )
-	AppCompatButton buttonSignUp;
-
-	private Animation animation;
-
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setStyle(STYLE_NO_FRAME, R.style.SplashScreenDialogTheme);
-		animation = AnimationUtils.loadAnimation( getActivity(), R.anim.et_anim);
-	}
-
-	public static SignupDialogFragment newInstance(int fromWhichScreen, boolean isLoginScreen) {
-
-		Bundle args = new Bundle();
-		args.putInt( Constants.BundleKeys.FROM_WHICH_SCREEN, fromWhichScreen);
-		args.putBoolean(Constants.BundleKeys.LOGIN_SCREEN,isLoginScreen);
-		SignupDialogFragment fragmentLogIn = new SignupDialogFragment();
-		fragmentLogIn.setArguments(args);
-		Log.i( TAG, "newInstance: "+fromWhichScreen );
-		return fragmentLogIn;
-	}
-
-	@Nullable
-	@Override
-	public View onCreateView( LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View rootview = inflater.inflate( R.layout.fragment_signup, container, false);
-		ButterKnife.bind( this, rootview);
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View rootview = inflater.inflate(R.layout.fragment_signup, container, false);
+        ButterKnife.bind(this, rootview);
 
 //		Utility.setStatusBarColorIfPossible( getActivity(), R.color.colorPrimary);
-		//Get Firebase auth instance
+        //Get Firebase auth instance
 //		auth = FirebaseAuth.getInstance();
 
-		init(rootview);
+        init(rootview);
 
-		askRuntimePermission();
+        askRuntimePermission();
 
-		// get bundle values
-		if (getArguments() != null) {
-			if(getArguments().containsKey( Constants.BundleKeys.FROM_WHICH_SCREEN ))
-				fromWhichScreen = getArguments().getInt(Constants.BundleKeys.FROM_WHICH_SCREEN);
-			if(getArguments().containsKey( Constants.BundleKeys.LOGIN_SCREEN ))
-				isLoginScreen = getArguments().getBoolean(Constants.BundleKeys.LOGIN_SCREEN);
-		}
+        // get bundle values
+        if (getArguments() != null) {
+            if (getArguments().containsKey(Constants.BundleKeys.FROM_WHICH_SCREEN))
+                fromWhichScreen = getArguments().getInt(Constants.BundleKeys.FROM_WHICH_SCREEN);
+            if (getArguments().containsKey(Constants.BundleKeys.LOGIN_SCREEN))
+                isLoginScreen = getArguments().getBoolean(Constants.BundleKeys.LOGIN_SCREEN);
+        }
 
-		//set ur sign in or sign up screen for user
+        //set ur sign in or sign up screen for user
 //		setupSigninSignUpScreen(isLoginScreen);
 
-		//Get Firebase auth instance
-		//	auth = FirebaseAuth.getInstance();
+        //Get Firebase auth instance
+        //	auth = FirebaseAuth.getInstance();
 
-		return rootview;
-	}
+        return rootview;
+    }
 
-	@OnClick(R.id.buttonSignUp)
-	protected void onLoginClick(){
+    @OnClick(R.id.buttonSignUp)
+    protected void onLoginClick() {
 
-		if(TextUtils.isEmpty(  editTextEmailSignup.getText().toString().trim())){
-			viewLineEmailSignup.setBackgroundColor( ContextCompat.getColor( getActivity(), R.color.red ) );
-			CommonUtils.showSnackBar( linearLayoutRootSignup, "Email can't be empty", Snackbar.LENGTH_SHORT );
-		}
-		else if(!CommonUtils.isValidEmail(  editTextEmailSignup.getText().toString().trim())){
-			viewLineEmailSignup.setBackgroundColor( ContextCompat.getColor( getActivity(), R.color.red ) );
-			CommonUtils.showSnackBar( linearLayoutRootSignup, "Invalid Email id", Snackbar.LENGTH_SHORT );
-		}
-		else if(TextUtils.isEmpty(  editTextPwdSignup.getText().toString().trim())){
-			CommonUtils.showSnackBar( linearLayoutRootSignup, "Password can't be empty", Snackbar.LENGTH_SHORT );
-		}
-		else if(TextUtils.isEmpty(  editTextFullNameSignup.getText().toString().trim())){
-			viewLineNameSignup.setBackgroundColor( ContextCompat.getColor( getActivity(), R.color.red ) );
-			CommonUtils.showSnackBar( linearLayoutRootSignup, "Name Can't be Empty", Snackbar.LENGTH_SHORT );
-		}
-		else if(TextUtils.isEmpty(  editTextMobileSignup.getText().toString().trim())){
-			viewLineMobileSignup.setBackgroundColor( ContextCompat.getColor( getActivity(), R.color.red ) );
-			CommonUtils.showSnackBar( linearLayoutRootSignup, "Password can't be empty", Snackbar.LENGTH_SHORT );
-		}
-		else {
-			smoothProgressbarSignup.setVisibility( View.VISIBLE );
-			new Handler().postDelayed( new Runnable() {
-				@Override
-				public void run() {
-					getActivity().startActivity( new Intent( getActivity(),WelcomeActivity.class ) );
-					getActivity().finish();
-				}
-			}, 2000 );
-		}
+        if (TextUtils.isEmpty(editTextEmailSignup.getText().toString().trim())) {
+            viewLineEmailSignup.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.red));
+            CommonUtils.showSnackBar(linearLayoutRootSignup, "Email can't be empty", Snackbar.LENGTH_SHORT);
+        } else if (!CommonUtils.isValidEmail(editTextEmailSignup.getText().toString().trim())) {
+            viewLineEmailSignup.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.red));
+            CommonUtils.showSnackBar(linearLayoutRootSignup, "Invalid Email id", Snackbar.LENGTH_SHORT);
+        } else if (TextUtils.isEmpty(editTextPwdSignup.getText().toString().trim())) {
+            CommonUtils.showSnackBar(linearLayoutRootSignup, "Password can't be empty", Snackbar.LENGTH_SHORT);
+        } else if (TextUtils.isEmpty(editTextFullNameSignup.getText().toString().trim())) {
+            viewLineNameSignup.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.red));
+            CommonUtils.showSnackBar(linearLayoutRootSignup, "Name Can't be Empty", Snackbar.LENGTH_SHORT);
+        } else if (TextUtils.isEmpty(editTextMobileSignup.getText().toString().trim())) {
+            viewLineMobileSignup.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.red));
+            CommonUtils.showSnackBar(linearLayoutRootSignup, "Password can't be empty", Snackbar.LENGTH_SHORT);
+        } else {
+            smoothProgressbarSignup.setVisibility(View.VISIBLE);
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    getActivity().startActivity(new Intent(getActivity(), WelcomeActivity.class));
+                    getActivity().finish();
+                }
+            }, 2000);
+        }
 
-	}
+    }
 
-	@OnClick(R.id.imageViewBackToolbar)
-	protected void onBackImageClick(){
-		dismiss();
-	}
+    @OnClick(R.id.imageViewBackToolbar)
+    protected void onBackImageClick() {
+        dismiss();
+    }
 
-	private void init( View rootview ) {
-		textViewTitleToolbarWithBack.setText( getString(R.string.signup ));
+    private void init(View rootview) {
 
-		editTextEmailSignup.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-			@Override
-			public void onFocusChange(View v, boolean hasFocus) {
-				if (hasFocus) {
-					viewLineEmailSignup.setBackgroundColor( ContextCompat.getColor( getActivity(), R.color.colorPrimaryDark));
-					viewLineEmailSignup.setVisibility(View.VISIBLE);
-					viewLineEmailSignup.startAnimation(animation);
+        linearLayoutRootSignup = (LinearLayout) rootview.findViewById(R.id.linearLayoutRootSignup);
 
-					viewLinePwdSignup.setBackgroundColor(Color.parseColor("#d3d3d3"));
-					viewLineEmailSignup.setBackgroundColor(Color.parseColor("#d3d3d3"));
-					viewLineMobileSignup.setBackgroundColor(Color.parseColor("#d3d3d3"));
+        editTextEmailSignup = (AppCompatEditText) rootview.findViewById(R.id.editTextEmailSignup);
 
-				} else {
-					viewLineEmailSignup.setBackgroundColor(Color.parseColor("#d3d3d3"));
-				}
-			}
-		});
+        viewLineEmailSignup = rootview.findViewById(R.id.viewLineEmailSignup);
 
-		editTextPwdSignup.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-			@Override
-			public void onFocusChange(View v, boolean hasFocus) {
-				if (hasFocus) {
-					viewLinePwdSignup.setBackgroundColor( ContextCompat.getColor( getActivity(), R.color.colorPrimaryDark));
-					viewLinePwdSignup.setVisibility(View.VISIBLE);
-					viewLinePwdSignup.startAnimation(animation);
+        editTextPwdSignup = (AppCompatEditText) rootview.findViewById(R.id.editTextPwdSignup);
 
-					viewLineNameSignup.setBackgroundColor(Color.parseColor("#d3d3d3"));
-					viewLineEmailSignup.setBackgroundColor(Color.parseColor("#d3d3d3"));
-					viewLineMobileSignup.setBackgroundColor(Color.parseColor("#d3d3d3"));
+        viewLinePwdSignup = (R.id.viewLinePwdSignup);
 
-				} else {
-					viewLinePwdSignup.setBackgroundColor(Color.parseColor("#d3d3d3"));
-				}
-			}
-		});
+        editTextFullNameSignup = (AppCompatEditText) rootview.findViewById(R.id.editTextFullNameSignup);
 
-		editTextFullNameSignup.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-			@Override
-			public void onFocusChange(View v, boolean hasFocus) {
-				if (hasFocus) {
-					viewLineNameSignup.setBackgroundColor( ContextCompat.getColor( getActivity(), R.color.colorPrimaryDark));
-					viewLineNameSignup.setVisibility(View.VISIBLE);
-					viewLineNameSignup.startAnimation(animation);
+        viewLineNameSignup = rootview.findViewById(R.id.viewLineNameSignup);
 
-					viewLinePwdSignup.setBackgroundColor(Color.parseColor("#d3d3d3"));
-					viewLineEmailSignup.setBackgroundColor(Color.parseColor("#d3d3d3"));
-					viewLineMobileSignup.setBackgroundColor(Color.parseColor("#d3d3d3"));
-				} else {
-					viewLineNameSignup.setBackgroundColor(Color.parseColor("#d3d3d3"));
-				}
-			}
-		});
+        editTextMobileSignup = (AppCompatEditText) rootview.findViewById(R.id.editTextMobileSignup);
 
-		editTextMobileSignup.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-			@Override
-			public void onFocusChange(View v, boolean hasFocus) {
-				if (hasFocus) {
-					viewLineMobileSignup.setBackgroundColor( ContextCompat.getColor( getActivity(), R.color.colorPrimaryDark));
-					viewLineMobileSignup.setVisibility(View.VISIBLE);
-					viewLineMobileSignup.startAnimation(animation);
+        viewLineMobileSignup = rootview.findViewById(R.id.viewLineMobileSignup);
+        radioGroupGender = (RadioGroup) rootview.findViewById(R.id.radioGroupGender);
 
-					viewLinePwdSignup.setBackgroundColor(Color.parseColor("#d3d3d3"));
-					viewLineEmailSignup.setBackgroundColor(Color.parseColor("#d3d3d3"));
-					viewLineNameSignup.setBackgroundColor(Color.parseColor("#d3d3d3"));
-				} else {
-					viewLineMobileSignup.setBackgroundColor(Color.parseColor("#d3d3d3"));
-				}
-			}
-		});
-	}
+
+        radiobuttonFemale = (RadioButton) rootview.findViewById(R.id.radiobuttonFemale);
+
+        radiobuttonMale = (RadioButton) rootview.findViewById(R.id.radiobuttonMale);
+
+        imageViewBackToolbar = (AppCompatImageView) rootview.findViewById(R.id.imageViewBackToolbar);
+
+        textViewTitleToolbarWithBack = (AppCompatTextView) rootview.findViewById(R.id.textViewTitleToolbarWithBack);
+
+        smoothProgressbarSignup = (SmoothProgressBar) rootview.findViewById(R.id.smoothProgressbarSignup);
+
+        buttonSignUp = (AppCompatButton) rootview.findViewById(R.id.buttonSignUp);
+
+        //
+    }
 
 /*	@NonNull
-	@Override
+    @Override
 	public Dialog onCreateDialog( Bundle savedInstanceState) {
 		final Dialog dialog = new Dialog(getActivity(), getTheme()) {
 			@Override
@@ -292,95 +212,95 @@ public class SignupDialogFragment  extends DialogFragment implements View.OnClic
 		return dialog;
 	}*/
 
-	@Override
-	public void onStart() {
-		super.onStart();
-		Dialog dialog = getDialog();
-		if (dialog != null) {
-			dialog.getWindow().setWindowAnimations(
-					R.style.styleDialogFragment );
-			dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-			dialog.getWindow().setBackgroundDrawable(new ColorDrawable( Color.TRANSPARENT));
-		}
-	}
+    @Override
+    public void onStart() {
+        super.onStart();
+        Dialog dialog = getDialog();
+        if (dialog != null) {
+            dialog.getWindow().setWindowAnimations(
+                    R.style.styleDialogFragment);
+            dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        }
+    }
 
-	@Override
-	public void onAttach(Context activity) {
-		super.onAttach(activity);
-		context = activity;
-	}
+    @Override
+    public void onAttach(Context activity) {
+        super.onAttach(activity);
+        context = activity;
+    }
 
-	@Override
-	public void onDestroy() {
-		if (getDialog() != null && getRetainInstance())
-			getDialog().setOnDismissListener(null);
-		super.onDestroy();
-	}
+    @Override
+    public void onDestroy() {
+        if (getDialog() != null && getRetainInstance())
+            getDialog().setOnDismissListener(null);
+        super.onDestroy();
+    }
 
-	@Override
-	public void onActivityCreated(Bundle savedInstanceState) {
-		super.onActivityCreated(savedInstanceState);
-		Log.i( TAG, "onActivityCreated: ");
-		getDialog().getWindow().getAttributes().windowAnimations = R.style.animationDialog;
-	}
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        Log.i(TAG, "onActivityCreated: ");
+        getDialog().getWindow().getAttributes().windowAnimations = R.style.animationDialog;
+    }
 
-	private void setupSigninSignUpScreen( boolean isLoginScreen ) {
+    private void setupSigninSignUpScreen(boolean isLoginScreen) {
 
-	}
+    }
 
-	//===============================READ PERMISSION FOR GET ACCOUNTS==============================
+    //===============================READ PERMISSION FOR GET ACCOUNTS==============================
 
-	private void setPrimaryEmailId() {
-		String primaryEmail_id = CommonUtils.getPrimaryEmailId( getActivity());
-		Log.i(TAG, "initView: " + primaryEmail_id);
-		if (!TextUtils.isEmpty( primaryEmail_id)) {
-			editTextEmailSignup.setText(primaryEmail_id);
-			editTextEmailSignup.setSelection(editTextEmailSignup.getText().length());
-		}
-	}
+    private void setPrimaryEmailId() {
+        String primaryEmail_id = CommonUtils.getPrimaryEmailId(getActivity());
+        Log.i(TAG, "initView: " + primaryEmail_id);
+        if (!TextUtils.isEmpty(primaryEmail_id)) {
+            editTextEmailSignup.setText(primaryEmail_id);
+            editTextEmailSignup.setSelection(editTextEmailSignup.getText().length());
+        }
+    }
 
-	private void askRuntimePermission() {
-		int hasWriteContactsPermission = 0;
-		if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
-			hasWriteContactsPermission = getActivity().checkSelfPermission( Manifest.permission.GET_ACCOUNTS);
-			if (hasWriteContactsPermission != PackageManager.PERMISSION_GRANTED) {
-				requestPermissions(new String[]{Manifest.permission.GET_ACCOUNTS},
-				                   REQUEST_CODE_ASK_PERMISSIONS);
-				return;
-			}
-			setPrimaryEmailId();
-		} else{
-			// do the task here
-			setPrimaryEmailId();
-		}
+    private void askRuntimePermission() {
+        int hasWriteContactsPermission = 0;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+            hasWriteContactsPermission = getActivity().checkSelfPermission(Manifest.permission.GET_ACCOUNTS);
+            if (hasWriteContactsPermission != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{Manifest.permission.GET_ACCOUNTS},
+                        REQUEST_CODE_ASK_PERMISSIONS);
+                return;
+            }
+            setPrimaryEmailId();
+        } else {
+            // do the task here
+            setPrimaryEmailId();
+        }
 
-	}
+    }
 
-	@Override
-	public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-		switch (requestCode) {
-			case REQUEST_CODE_ASK_PERMISSIONS:
-				if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-					// Permission Granted and do ur task here
-					setPrimaryEmailId();
-				} else {
-					// Permission Denied
-					// CommonUtils.showSnackBar(mLinearLayoutOnBoardingRoot,"Read Account Permission Denied", Snackbar.LENGTH_SHORT);
-				}
-				break;
-			default:
-				super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-		}
-	}
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        switch (requestCode) {
+            case REQUEST_CODE_ASK_PERMISSIONS:
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    // Permission Granted and do ur task here
+                    setPrimaryEmailId();
+                } else {
+                    // Permission Denied
+                    // CommonUtils.showSnackBar(mLinearLayoutOnBoardingRoot,"Read Account Permission Denied", Snackbar.LENGTH_SHORT);
+                }
+                break;
+            default:
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+    }
 
-	@Override
-	public void onClick( View view ) {
-		switch ( view.getId() ){
-			case R.id.imageViewBackToolbar :
-				Toast.makeText( getActivity(), "Onclick Back", Toast.LENGTH_SHORT ).show();
-				break;
-		}
-	}
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.imageViewBackToolbar:
+                Toast.makeText(getActivity(), "Onclick Back", Toast.LENGTH_SHORT).show();
+                break;
+        }
+    }
 //=============================== END READ PERMISSION FOR GET ACCOUNTS==============================
 
 }
