@@ -20,7 +20,7 @@
         android:gravity="center_vertical"
         >
 
-        <com.spcart.shop.views.TextViewBold
+        <com.clipwiser.views.TextViewBold
             android:id="@+id/mTextViewTitleToolbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -63,7 +63,7 @@
                 android:layout_centerVertical="true"
                 app:srcCompat="@drawable/ic_cart" />
 
-            <com.spcart.shop.views.TextViewRegular
+            <com.clipwiser.views.TextViewRegular
                 android:id="@+id/mTextViewCartCount"
                 android:layout_width="@dimen/dimen_20dp"
                 android:layout_height="@dimen/dimen_20dp"
@@ -98,7 +98,7 @@
                 android:layout_centerVertical="true"
                 app:srcCompat="@drawable/ic_notifications_24dp" />
 
-            <com.spcart.shop.views.TextViewRegular
+            <com.clipwiser.views.TextViewRegular
                 android:id="@+id/mTextViewNotificationCount"
                 android:layout_width="@dimen/dimen_20dp"
                 android:layout_height="@dimen/dimen_20dp"

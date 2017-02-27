@@ -120,7 +120,7 @@
                     />
 
             </RadioGroup>
-        <com.spcart.shop.views.SpCompatButton
+        <com.clipwiser.views.SpCompatButton
             android:id="@+id/buttonSignUp"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dimen_44dp"
@@ -131,7 +131,7 @@
             android:textColor="@android:color/white"
             />
 
-        <com.spcart.shop.views.custom_progressbar.SmoothProgressBar
+        <com.clipwiser.views.custom_progressbar.SmoothProgressBar
             android:id="@+id/smoothProgressbarSignup"
             android:layout_width="match_parent"
             android:layout_height="3dp"

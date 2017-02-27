@@ -15,7 +15,7 @@ import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 
-import com.spcart.shop.R;
+import com.clipwiser.R;
 
 
 /**

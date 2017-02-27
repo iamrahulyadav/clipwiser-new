@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayoutRootMainChatlist"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/dimen_5dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/dummy_women_image"
+            />
+
+    </RelativeLayout>
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/imageviewItemChatListMain"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:src="@mipmap/ic_launcher" />
+
+    <com.clipwiser.views.TextViewBold
+        android:id="@+id/textViewNameChatList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_5dp"
+        android:layout_marginEnd="@dimen/dimen_10dp"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:layout_marginStart="@dimen/dimen_10dp"
+        android:layout_toEndOf="@+id/imageviewItemChatListMain"
+        android:layout_toLeftOf="@+id/textViewTimeChatList"
+        android:layout_toRightOf="@+id/imageviewItemChatListMain"
+        android:layout_toStartOf="@+id/textViewTimeChatList"
+        android:textSize="@dimen/dimen_16sp" />
+
+    <com.clipwiser.views.TextViewRegular
+        android:id="@+id/textViewLastChat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewNameChatList"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginStart="@dimen/dimen_10dp"
+        android:layout_toEndOf="@+id/imageviewItemChatListMain"
+        android:layout_toRightOf="@+id/imageviewItemChatListMain" />
+
+    <com.clipwiser.views.TextViewRegular
+        android:id="@+id/textViewTimeChatList"
+        android:layout_width="@dimen/dimen_100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:text="12.50 AM"
+        android:textSize="@dimen/dimen_16sp" />
+
+
+
+</RelativeLayout>

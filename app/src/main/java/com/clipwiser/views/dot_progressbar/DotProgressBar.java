@@ -19,7 +19,8 @@ import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.Transformation;
 
-import com.spcart.shop.R;
+
+import com.clipwiser.R;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

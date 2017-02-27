@@ -23,11 +23,11 @@
         app:showAsAction="always" />
 
 
-    <item
+    <!--<item
         android:id="@+id/ic_action_user"
         android:icon="@drawable/ic_person_24dp"
         android:title="user"
-        app:showAsAction="always" />
+        app:showAsAction="always" />-->
 
 
 </menu>

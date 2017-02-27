@@ -11,10 +11,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 
-import com.spcart.shop.R;
-import com.spcart.shop.ui.activity.SearchActivity;
-import com.spcart.shop.views.custom_progressbar.SmoothProgressBar;
-import com.spcart.shop.views.dot_progressbar.DotProgressBar;
+
+import com.clipwiser.R;
+import com.clipwiser.activity.SearchActivity;
+import com.clipwiser.views.custom_progressbar.SmoothProgressBar;
+import com.clipwiser.views.dot_progressbar.DotProgressBar;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -30,8 +31,8 @@ public class BaseRecyclerActivity extends AppCompatActivity {
 	private   FrameLayout       mLayoutContainer;
 	protected Toolbar           mToolBar;
 	private   ProgressBar       progressbarLoadingRecycler;
-	private   SmoothProgressBar smoothProgressbarRecycler;
-	private   DotProgressBar    dotProgressbarLoadMore;
+	private SmoothProgressBar smoothProgressbarRecycler;
+	private DotProgressBar dotProgressbarLoadMore;
 
 	@BindView( R.id.mImageViewSearchToolbar )
 	protected AppCompatImageView mImageViewSearchToolbar;

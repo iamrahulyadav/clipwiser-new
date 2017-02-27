@@ -19,6 +19,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.clipwiser.R;
+import com.clipwiser.utils.Constants;
+
 
 /**
  * Created by Mahesh Nayak on 15-01-2016.

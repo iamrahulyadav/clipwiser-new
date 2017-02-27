@@ -85,6 +85,7 @@
     <dimen name="dimen_45dp">45dp</dimen>
     <dimen name="dimen_250dp">250dp</dimen>
     <dimen name="dimen_17sp">17sp</dimen>
+    <dimen name="dimen_19sp">19sp</dimen>
     // for caption
     
 </resources>

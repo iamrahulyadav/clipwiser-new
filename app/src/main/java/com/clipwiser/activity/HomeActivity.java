@@ -17,18 +17,16 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
-import android.support.v7.widget.AppCompatImageView;
-import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import spinfotech.spchatting.R;
-import spinfotech.spchatting.ui.adapter.HomePagerAdapter;
-import spinfotech.spchatting.ui.fragment.HomeTabbedFragment;
-import spinfotech.spchatting.ui.fragment.UserTabbedFragment;
+import com.clipwiser.R;
+import com.clipwiser.adapter.HomePagerAdapter;
+import com.clipwiser.fragment.ClipTabbedFragment;
+import com.clipwiser.fragment.UserTabbedFragment;
+
 
 /**
  * TODO
@@ -100,13 +98,13 @@ public class HomeActivity extends AppCompatActivity {
 
 	@Override
 	public boolean onCreateOptionsMenu( Menu menu ) {
-		getMenuInflater().inflate( R.menu.sample_actions, menu );
+		getMenuInflater().inflate( R.menu.menu_home, menu );
 		return true;
 	}
 
 	@Override
 	public boolean onPrepareOptionsMenu( Menu menu ) {
-		switch ( AppCompatDelegate.getDefaultNightMode() ) {
+		/*switch ( AppCompatDelegate.getDefaultNightMode() ) {
 			case AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM:
 				menu.findItem( R.id.menu_night_mode_system ).setChecked( true );
 				break;
@@ -119,7 +117,7 @@ public class HomeActivity extends AppCompatActivity {
 			case AppCompatDelegate.MODE_NIGHT_NO:
 				menu.findItem( R.id.menu_night_mode_day ).setChecked( true );
 				break;
-		}
+		}*/
 		return true;
 	}
 
@@ -155,10 +153,10 @@ public class HomeActivity extends AppCompatActivity {
 
 	private void setupViewPager( ViewPager viewPager ) {
 		adapter = new HomePagerAdapter( getSupportFragmentManager() );
-		adapter.addFragment( new HomeTabbedFragment(), "Calls" );
-		adapter.addFragment( new HomeTabbedFragment(), "Chats" );
-		adapter.addFragment( new HomeTabbedFragment(), "Contacts" );
-		adapter.addFragment( new UserTabbedFragment(), "Users" );
+		adapter.addFragment(  ClipTabbedFragment.newInstance(1), "Clips" );
+		adapter.addFragment( ClipTabbedFragment.newInstance(2), "Social" );
+		adapter.addFragment( ClipTabbedFragment.newInstance(2), "Wishlist" );
+		adapter.addFragment( new UserTabbedFragment(), "TimeLine" );
 		viewPager.setAdapter( adapter );
 	}
 
@@ -183,12 +181,7 @@ public class HomeActivity extends AppCompatActivity {
 //			tabLayout.getTabAt(i).setCustomView(viewPagerAdapter.getTabView(i));
 		}
 	}
-	public View getTabView(int position) {
-		View               view  = LayoutInflater.from( this).inflate( R.layout.custom_tab_layout, null);
-		AppCompatTextView  title = (AppCompatTextView ) view.findViewById( R.id.textViewTabname);
-		AppCompatImageView icon  = (AppCompatImageView ) view.findViewById( R.id.imageViewTab);
-		return view;
-	}
+
 	private void setFabIcon(int position){
 		switch ( position ) {
 			case 0:

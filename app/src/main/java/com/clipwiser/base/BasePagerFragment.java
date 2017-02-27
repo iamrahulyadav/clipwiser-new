@@ -13,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.clipwiser.R;
+
 
 /**
  * Created by Mahesh Nayak on 05-02-2016.

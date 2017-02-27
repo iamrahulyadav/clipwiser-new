@@ -64,6 +64,11 @@
     <string name="orders">Orders</string>
     <string name="add_to_cart">Add to Cart</string>
     <string name="save_to">SAVE TO</string>
+    <string name="menu_night_mode_system" />
+    <string name="menu_night_mode_day" />
+    <string name="menu_night_mode_night">sdasd</string>
+    <string name="menu_night_mode_auto">das</string>
+    <string name="menu_night_mode">asdasd</string>
 
 
     <array name="menTshirt">

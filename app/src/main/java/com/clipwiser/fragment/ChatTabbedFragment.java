@@ -7,8 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import spinfotech.spchatting.R;
-import spinfotech.spchatting.base.BaseFragment;
+import com.clipwiser.R;
+import com.clipwiser.base.BaseFragment;
+
 
 /**
  * Created by sibaprasad on 23/12/16.
@@ -43,23 +44,8 @@ public class ChatTabbedFragment extends BaseFragment {
 
 		rootView = inflater.inflate( R.layout.fragment_hometabbed ,container,false);
 
-		initView( rootView );
+		recyclerview = ( RecyclerView ) rootView.findViewById( R.id.recyclerview );
 
 		return rootView;
-	}
-
-	@Override
-	public void initView( View rootView ) {
-		recyclerview = ( RecyclerView ) rootView.findViewById( R.id.recyclerview );
-	}
-
-	@Override
-	public void setClickListener() {
-
-	}
-
-	@Override
-	public void setUpdata() {
-
 	}
 }

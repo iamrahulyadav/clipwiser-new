@@ -24,7 +24,7 @@
     android:orientation="vertical"
     android:gravity="bottom">
 
-    <com.spcart.shop.views.TextViewRegular
+    <com.clipwiser.views.TextViewRegular
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Username"

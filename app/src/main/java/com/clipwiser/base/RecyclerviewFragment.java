@@ -17,8 +17,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.spcart.shop.R;
-import com.spcart.shop.common.NetworkUtil;
+import com.clipwiser.R;
+import com.clipwiser.utils.NetworkUtil;
 
 
 /**

@@ -31,7 +31,7 @@
         android:layout_centerInParent="true"
         android:id="@+id/view" />
 
-    <com.spcart.shop.views.TextViewRegular
+    <com.clipwiser.views.TextViewRegular
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="My Basket"

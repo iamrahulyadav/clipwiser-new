@@ -4,30 +4,47 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@drawable/home_icon"
             android:title="Home"/>
         <item
             android:id="@+id/nav_menu_trackme"
-            android:icon="@mipmap/ic_launcher"
-            android:title="Track me"/>
+            android:icon="@drawable/alert_icon"
+            android:title="Friends"/>
         <item
             android:id="@+id/nav_menu_geofencing"
-            android:icon="@mipmap/ic_launcher"
-            android:title="Geofencing"/>
+            android:icon="@drawable/alert_icon"
+            android:title="Create Clip Board"/>
         <item
             android:id="@+id/nav_menu_mypath"
-            android:icon="@mipmap/ic_launcher"
-            android:title="Draw My Path"/>
+            android:icon="@drawable/alert_icon"
+            android:title="Create Business Page"/>
+        <item
+            android:id="@+id/nav_menu_uploadImage"
+            android:icon="@drawable/alert_icon"
+            android:title="Upload Image"/>
+
+        <item
+            android:id="@+id/nav_menu_addFriend"
+            android:icon="@drawable/alert_icon"
+            android:title="Add Friend"/>
+
     </group>
 
-    <item android:title="Sub items">
+    <item android:title="Settings">
         <menu>
             <item
-                android:icon="@mipmap/ic_launcher"
-                android:title="Sub item 1"/>
+                android:icon="@drawable/alert_icon"
+                android:title="Share APplication"/>
             <item
-                android:icon="@mipmap/ic_launcher"
-                android:title="Sub item 2"/>
+                android:icon="@drawable/alert_icon"
+                android:title="Rate US"/>
+            <item
+                android:icon="@drawable/alert_icon"
+                android:title="Delete Account"/>
+
+            <item
+                android:icon="@drawable/alert_icon"
+                android:title="Settings"/>
         </menu>
     </item>
 </menu>

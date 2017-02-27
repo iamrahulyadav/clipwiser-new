@@ -8,7 +8,8 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
-import com.spcart.shop.R;
+import com.clipwiser.R;
+
 
 /**
  * Created by naresh on 20/10/16.

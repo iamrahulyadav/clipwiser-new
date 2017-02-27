@@ -36,7 +36,8 @@ import android.widget.GridView;
 import android.widget.ListAdapter;
 import android.widget.TextView;
 
-import com.spcart.shop.R;
+
+import com.clipwiser.R;
 
 import org.json.JSONObject;
 

@@ -180,11 +180,7 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseFrag
 				return true;
 
 
-			case R.id.ic_action_user: {
-				if(isRightDrawerEnable)
-					mDrawerLayout.openDrawer( GravityCompat.END ); /*Opens the Right Drawer*/
-				return true;
-			}
+
 
 		}
 		return super.onOptionsItemSelected( item );
