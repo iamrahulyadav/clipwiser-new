@@ -4,96 +4,35 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
 import android.support.v7.widget.AppCompatButton;
-import android.support.v7.widget.AppCompatTextView;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.clipwiser.account.FacebookManager;
 import com.clipwiser.account.LoginDialogFragment;
 import com.clipwiser.account.SignupDialogFragment;
-import com.clipwiser.activity.HomeActivity;
-import com.clipwiser.adapter.ImageSlidingAdapter;
 import com.clipwiser.base.BaseActivity;
 import com.clipwiser.interfaces.SignInSIgnupCLickListener;
-import com.clipwiser.utils.CommonUtils;
 import com.clipwiser.utils.Constants;
-import com.clipwiser.views.viewpager_transformation.AccordionTransformer;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import butterknife.OnClick;
 
 
 public class WelcomeActivity extends BaseActivity implements BaseActivity.OnNavigationClick, FacebookManager.OnFacebookLoginSuccessListener, SignInSIgnupCLickListener {
 
     private static final String TAG = "WelcomeActivity";
 
-    protected DialogFragment fragment;
-//	private DotProgressBar dotProgressbarLoadMore;
-
-
-    AppCompatButton buttonGoogle;
-
-
-    AppCompatButton buttonFacebook;
-
-
-    AppCompatButton buttonSignIn;
-
-
-    AppCompatButton buttonSignUp;
-
-
-    AppCompatTextView textViewSkipWelcome;
-
-
-    ViewPager viewpagerImageSlidingWelcome;
-
-
-    LinearLayout activity_welcome;
-
-    ImageSlidingAdapter imageSlidingAdapter;
-
-    List<String> listImage = new ArrayList<>();
-
+    // widgets Declaration
+    private AppCompatButton buttonRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
-        activity_welcome = (LinearLayout) findViewById(R.id.activity_welcome);
-        viewpagerImageSlidingWelcome = (ViewPager) findViewById(R.id.viewpagerImageSlidingWelcome);
-        textViewSkipWelcome = (AppCompatTextView) findViewById(R.id.textViewSkipWelcome);
-        buttonGoogle = (AppCompatButton) findViewById(R.id.buttonGoogle);
-        buttonFacebook = (AppCompatButton) findViewById(R.id.buttonFacebook);
-        buttonSignIn = (AppCompatButton) findViewById(R.id.buttonSignIn);
-        buttonSignUp = (AppCompatButton) findViewById(R.id.buttonSignUp);
+        init();
 
-
-        listImage.add("http://loremflickr.com/g/320/240/paris,girl/all");
-        listImage.add("http://loremflickr.com/320/240/dog");
-        listImage.add("http://loremflickr.com/320/240/brazil,rio");
-
-        imageSlidingAdapter = new ImageSlidingAdapter(this, listImage, null, false);
-        viewpagerImageSlidingWelcome.setAdapter(imageSlidingAdapter);
-        viewpagerImageSlidingWelcome.setPageTransformer(true, new AccordionTransformer());
-
-
-        buttonSignIn.setOnClickListener(this);
-        buttonSignUp.setOnClickListener(this);
-        textViewSkipWelcome.setOnClickListener(this);
-
-        showSplashDialog();
+        //  showSplashDialog();
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -113,25 +52,9 @@ public class WelcomeActivity extends BaseActivity implements BaseActivity.OnNavi
 
     }
 
-    @OnClick(R.id.buttonFacebook)
-    protected void onFacebookLoginClick() {
-        FacebookManager.getInstance(WelcomeActivity.this).login(this, this);
-    }
-
-    @OnClick(R.id.buttonGoogle)
-    protected void onGoogleLoginClick() {
-//        GoogleSignInManager.getInstance(WelcomeActivity.this).signIn(this);
-    }
-
-
-    protected void showSplashDialog() {
-        fragment = new SplashDialodFragment();
-        try {
-            fragment.show(getSupportFragmentManager(), Constants.Dialogs.SPLASH);
-        } catch (IllegalStateException e) {
-            Toast.makeText(this, R.string.something_went_wrong, Toast
-                    .LENGTH_SHORT).show();
-        }
+    void init() {
+        buttonRegister = (AppCompatButton) findViewById(R.id.buttonRegister);
+        buttonRegister.setOnClickListener(this);
     }
 
 
@@ -244,20 +167,9 @@ public class WelcomeActivity extends BaseActivity implements BaseActivity.OnNavi
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.mImageViewUser:
-            case android.R.id.home:
-                mDrawerLayout.openDrawer(GravityCompat.END);
+            case R.id.buttonRegister:
+                SignupDialogFragment.newInstance().show(getSupportFragmentManager(), SignupDialogFragment.TAG);
                 break;
-            case R.id.textViewSkipWelcome:
-                startActivity(new Intent(this, HomeActivity.class));
-                break;
-            case R.id.buttonSignUp:
-                showLoginDialog();
-                break;
-            case R.id.buttonSignIn:
-                showSignUpDialog();
-                break;
-
         }
     }
 
@@ -289,12 +201,12 @@ public class WelcomeActivity extends BaseActivity implements BaseActivity.OnNavi
 
     @Override
     public void onFacebookLoginSuccess(String accessToken) {
-        CommonUtils.showSnackBar(activity_welcome, "Facebook token " + accessToken, Snackbar.LENGTH_SHORT);
+
     }
 
     @Override
     public void onFacebookFailed() {
-        CommonUtils.showSnackBar(activity_welcome, "Facebook Sign In Faliled", Snackbar.LENGTH_SHORT);
+
     }
 
     @Override
@@ -308,7 +220,7 @@ public class WelcomeActivity extends BaseActivity implements BaseActivity.OnNavi
 
     private void showLoginDialog() {
         Log.i(TAG, "showSignUpDialog: ");
-        fragment = new SignupDialogFragment().newInstance(0, true);
+        fragment = new SignupDialogFragment().newInstance( );
         try {
             fragment.show(getSupportFragmentManager(), Constants.Dialogs.SPLASH);
         } catch (IllegalStateException e) {

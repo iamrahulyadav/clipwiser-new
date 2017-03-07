@@ -69,6 +69,17 @@
     <string name="menu_night_mode_night">sdasd</string>
     <string name="menu_night_mode_auto">das</string>
     <string name="menu_night_mode">asdasd</string>
+    <string name="or">OR</string>
+    <string name="keep_me_login">Keep me login</string>
+    <string name="dontHaveAcc_register">DOnt Have Account ? Register.</string>
+    <string name="registration">Sign Up</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="password">Password</string>
+    <string name="conf_pwd">Confirm Password</string>
+    <string name="mobile">Mobile</string>
+    <string name="dob">Enter DOB</string>
+    <string name="already_have_acc">Already Have Account ? Login Now</string>
 
 
     <array name="menTshirt">
@@ -130,6 +141,20 @@
         <item>Choose all types of product with 1000 Brands only in SP Cart</item>
         <item>SP cart Provides the best brands in market with less price compared to Other online Shop</item>
         <item>10,000 Orders placed Successfully within one Months and user satisfication</item>
+    </array>
+    <array name="months">
+        <item>Jan</item>
+        <item>Feb</item>
+        <item>Mar</item>
+        <item>Apr</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>Aug</item>
+        <item>Sept</item>
+        <item>Oct</item>
+        <item>Nov</item>
+        <item>Dec</item>
     </array>
 
 </resources>

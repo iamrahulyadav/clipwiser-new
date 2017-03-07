@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ClipWiser_New.iml" filepath="$PROJECT_DIR$/ClipWiser_New.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/clipwiser-new.iml" filepath="$PROJECT_DIR$/clipwiser-new.iml" />
     </modules>
   </component>

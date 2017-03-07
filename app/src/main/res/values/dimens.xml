@@ -36,6 +36,9 @@
     <dimen name="dimen_27dp">27dp</dimen>
     <dimen name="dimen_28dp">28dp</dimen>
     <dimen name="dimen_40dp">40dp</dimen>
+
+    <dimen name="dimen_edittext_height">40dp</dimen>
+
     <dimen name="detail_backdrop_height">256dp</dimen>
     <dimen name="card_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>

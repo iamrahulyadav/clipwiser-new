@@ -1,49 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:custom="http://schemas.android.com/apk/res-auto"
-              android:orientation="vertical"
-              style="@style/layout_normal"
-              android:id="@+id/activity_welcome"
-              android:weightSum="4"
-              android:padding="@dimen/dimen_0dp"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_welcomeRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/dimen_0dp"
+    android:background="@drawable/dummy_bg"
     >
 
     <RelativeLayout
-        android:id="@+id/relativeSlider"
+        android:id="@+id/relativeSliderWelcome"
         style="@style/layout_normal"
-        android:layout_weight="2.3"
-        android:layout_height="@dimen/dimen_0dp"
-        >
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:padding="@dimen/dimen_0dp"
+        android:visibility="gone">
+
         <android.support.v4.view.ViewPager
-            android:id="@+id/viewpagerImageSlidingWelcome"
+            android:id="@+id/viewpagerWelcomeSLider"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 
-        <com.clipwiser.views.TextViewRegular
-            android:id="@+id/textViewSkipWelcome"
-            style="@style/textStyle_normal"
-            android:text="@string/skip"
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/textViewSkip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_margin="@dimen/dimen_5dp"
-            />
+            android:layout_margin="@dimen/dimen_10dp"
+            android:text="Skip"
+            android:textSize="@dimen/dimen_17sp"
+            android:textStyle="bold" />
 
-        </RelativeLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dimen_1dp"
-        android:background="@color/color_8a000000"
-        android:alpha="0.3"
-        />
-
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.7"
-        >
-    <include
-        layout="@layout/include_loginsigup"/>
     </RelativeLayout>
 
-</LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/dimen_20dp">
+
+        <LinearLayout
+            android:id="@+id/relativeLayoutLoginRoot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.5"
+            android:background="@color/black"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_10dp">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/imageViewFacebookLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                app:srcCompat="@android:drawable/ic_search_category_default" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:text="@string/or"
+                android:textColor="@android:color/white" />
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/edittextEmailLogin"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/edittext_boarder_white"
+                android:drawableLeft="@drawable/ic_launcher"
+                android:inputType="textEmailAddress"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                />
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/edittextPwdLogin"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:background="@drawable/edittext_boarder_white"
+                android:drawableLeft="@drawable/ic_launcher"
+                android:inputType="textPassword" />
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/checkboxLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:text="@string/keep_me_login" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:background="@drawable/button_selector_grey"
+                android:text="@string/login"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/textViewForgotPassword"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:text="@string/forgot_pwd"
+                android:textStyle="bold" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:background="@drawable/button_selector_grey"
+                android:text="@string/dontHaveAcc_register"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

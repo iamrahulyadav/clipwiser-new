@@ -5,19 +5,15 @@ package com.clipwiser.account;
  */
 
 import android.Manifest;
+import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.DialogFragment;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.AppCompatTextView;
@@ -26,191 +22,108 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.LinearLayout;
+import android.widget.DatePicker;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.clipwiser.R;
-import com.clipwiser.WelcomeActivity;
 import com.clipwiser.utils.CommonUtils;
-import com.clipwiser.utils.Constants;
-import com.clipwiser.views.custom_progressbar.SmoothProgressBar;
 
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.List;
 
 /**
  * Created by Sibaprasad on 4/2/2016.
  */
 public class SignupDialogFragment extends DialogFragment implements View.OnClickListener {
 
+    public static final String TAG = "SignupDialogFragment";
     private static final int REQUEST_CODE_ASK_PERMISSIONS = 9999;
-    public static String TAG = "Signup";
-    LinearLayout linearLayoutRootSignup;
-    AppCompatEditText editTextEmailSignup;
-    View viewLineEmailSignup;
-    AppCompatEditText editTextPwdSignup;
-    int viewLinePwdSignup;
-
-    //FIREBASE
-
-    //Widgets Initializaion using Buffer knife
-    AppCompatEditText editTextFullNameSignup;
-    View viewLineNameSignup;
-    AppCompatEditText editTextMobileSignup;
-    View viewLineMobileSignup;
-    RadioGroup radioGroupGender;
-    RadioButton radiobuttonFemale;
-    RadioButton radiobuttonMale;
-    AppCompatImageView imageViewBackToolbar;
-    AppCompatTextView textViewTitleToolbarWithBack;
-    SmoothProgressBar smoothProgressbarSignup;
-    AppCompatButton buttonSignUp;
     private Context context;
-    //=========OTHER CONSTANTS============
-    private int fromWhichScreen = 0;
-    private boolean isLoginScreen = false;
-    private String strEmail;
-    private String strPwd;
-    private Animation animation;
+    // widgets Initialization
+    private AppCompatImageView imageViewBackToolbar;
+    private AppCompatTextView textViewTitleToolbar;
+    private AppCompatEditText edittextFnameRegistration;
+    private AppCompatEditText edittextLnameRegistration;
+    private AppCompatEditText edittextEmailRegistration;
+    private AppCompatEditText edittextPwdRegistration;
+    private AppCompatEditText edittextConfPwdRegistration;
+    private AppCompatEditText edittextMobileRegistration;
+    private AppCompatEditText edittextDOBRegistration;
+    DatePickerDialog.OnDateSetListener dob = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+            List<String> monthNames = Arrays.asList(getResources().getStringArray(R.array.months));
+            String mDay = "", mMonth = "", mYear = "";
+            int day = dayOfMonth;
+            if (dayOfMonth < 10) {
+                mDay = "0" + day;
+            } else {
+                mDay = "" + day;
+            }
+            int month = monthOfYear + 1;
+            if (month < 10) {
+                mMonth = "0" + month;
+            } else {
+                mMonth = "" + month;
+            }
+            mYear = "" + year;
+            edittextDOBRegistration.setText(monthNames.get(monthOfYear) + " " + mDay + "," + year);
+            //  tvDob.setText(monthNames.get(monthOfYear) + " " + mDay + "," + year);
+            //  mDob = mYear + "-" + mMonth + "-" + mDay;
+            //   Toast.makeText(RegistrationActivity.this, mDob, Toast.LENGTH_SHORT).show();
+        }
+    };
+    private RadioGroup radioGroupGender;
+    private RadioButton radioMale;
+    private RadioButton radioFemale;
 
-    public static SignupDialogFragment newInstance(int fromWhichScreen, boolean isLoginScreen) {
+    public static SignupDialogFragment newInstance() {
 
-        Bundle args = new Bundle();
+        /*Bundle args = new Bundle();
         args.putInt(Constants.BundleKeys.FROM_WHICH_SCREEN, fromWhichScreen);
         args.putBoolean(Constants.BundleKeys.LOGIN_SCREEN, isLoginScreen);
         SignupDialogFragment fragmentLogIn = new SignupDialogFragment();
         fragmentLogIn.setArguments(args);
-        Log.i(TAG, "newInstance: " + fromWhichScreen);
-        return fragmentLogIn;
+        Log.i(TAG, "newInstance: " + fromWhichScreen);*/
+        return new SignupDialogFragment();
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setStyle(STYLE_NO_FRAME, R.style.SplashScreenDialogTheme);
-        animation = AnimationUtils.loadAnimation(getActivity(), R.anim.et_anim);
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootview = inflater.inflate(R.layout.fragment_signup, container, false);
-        ButterKnife.bind(this, rootview);
-
-//		Utility.setStatusBarColorIfPossible( getActivity(), R.color.colorPrimary);
-        //Get Firebase auth instance
-//		auth = FirebaseAuth.getInstance();
+        View rootview = inflater.inflate(R.layout.fragment_registration, container, false);
 
         init(rootview);
 
-        askRuntimePermission();
-
-        // get bundle values
-        if (getArguments() != null) {
-            if (getArguments().containsKey(Constants.BundleKeys.FROM_WHICH_SCREEN))
-                fromWhichScreen = getArguments().getInt(Constants.BundleKeys.FROM_WHICH_SCREEN);
-            if (getArguments().containsKey(Constants.BundleKeys.LOGIN_SCREEN))
-                isLoginScreen = getArguments().getBoolean(Constants.BundleKeys.LOGIN_SCREEN);
-        }
-
-        //set ur sign in or sign up screen for user
-//		setupSigninSignUpScreen(isLoginScreen);
-
-        //Get Firebase auth instance
-        //	auth = FirebaseAuth.getInstance();
-
+        //  askRuntimePermission();
         return rootview;
     }
 
-    @OnClick(R.id.buttonSignUp)
-    protected void onLoginClick() {
-
-        if (TextUtils.isEmpty(editTextEmailSignup.getText().toString().trim())) {
-            viewLineEmailSignup.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.red));
-            CommonUtils.showSnackBar(linearLayoutRootSignup, "Email can't be empty", Snackbar.LENGTH_SHORT);
-        } else if (!CommonUtils.isValidEmail(editTextEmailSignup.getText().toString().trim())) {
-            viewLineEmailSignup.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.red));
-            CommonUtils.showSnackBar(linearLayoutRootSignup, "Invalid Email id", Snackbar.LENGTH_SHORT);
-        } else if (TextUtils.isEmpty(editTextPwdSignup.getText().toString().trim())) {
-            CommonUtils.showSnackBar(linearLayoutRootSignup, "Password can't be empty", Snackbar.LENGTH_SHORT);
-        } else if (TextUtils.isEmpty(editTextFullNameSignup.getText().toString().trim())) {
-            viewLineNameSignup.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.red));
-            CommonUtils.showSnackBar(linearLayoutRootSignup, "Name Can't be Empty", Snackbar.LENGTH_SHORT);
-        } else if (TextUtils.isEmpty(editTextMobileSignup.getText().toString().trim())) {
-            viewLineMobileSignup.setBackgroundColor(ContextCompat.getColor(getActivity(), R.color.red));
-            CommonUtils.showSnackBar(linearLayoutRootSignup, "Password can't be empty", Snackbar.LENGTH_SHORT);
-        } else {
-            smoothProgressbarSignup.setVisibility(View.VISIBLE);
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    getActivity().startActivity(new Intent(getActivity(), WelcomeActivity.class));
-                    getActivity().finish();
-                }
-            }, 2000);
-        }
-
-    }
-
-    @OnClick(R.id.imageViewBackToolbar)
-    protected void onBackImageClick() {
-        dismiss();
-    }
-
     private void init(View rootview) {
-
-        linearLayoutRootSignup = (LinearLayout) rootview.findViewById(R.id.linearLayoutRootSignup);
-
-        editTextEmailSignup = (AppCompatEditText) rootview.findViewById(R.id.editTextEmailSignup);
-
-        viewLineEmailSignup = rootview.findViewById(R.id.viewLineEmailSignup);
-
-        editTextPwdSignup = (AppCompatEditText) rootview.findViewById(R.id.editTextPwdSignup);
-
-        viewLinePwdSignup = (R.id.viewLinePwdSignup);
-
-        editTextFullNameSignup = (AppCompatEditText) rootview.findViewById(R.id.editTextFullNameSignup);
-
-        viewLineNameSignup = rootview.findViewById(R.id.viewLineNameSignup);
-
-        editTextMobileSignup = (AppCompatEditText) rootview.findViewById(R.id.editTextMobileSignup);
-
-        viewLineMobileSignup = rootview.findViewById(R.id.viewLineMobileSignup);
-        radioGroupGender = (RadioGroup) rootview.findViewById(R.id.radioGroupGender);
-
-
-        radiobuttonFemale = (RadioButton) rootview.findViewById(R.id.radiobuttonFemale);
-
-        radiobuttonMale = (RadioButton) rootview.findViewById(R.id.radiobuttonMale);
-
         imageViewBackToolbar = (AppCompatImageView) rootview.findViewById(R.id.imageViewBackToolbar);
+        textViewTitleToolbar = (AppCompatTextView) rootview.findViewById(R.id.textViewTitleToolbar);
+        edittextFnameRegistration = (AppCompatEditText) rootview.findViewById(R.id.edittextFnameRegistration);
+        edittextLnameRegistration = (AppCompatEditText) rootview.findViewById(R.id.edittextLnameRegistration);
+        edittextEmailRegistration = (AppCompatEditText) rootview.findViewById(R.id.edittextEmailRegistration);
+        edittextPwdRegistration = (AppCompatEditText) rootview.findViewById(R.id.edittextPwdRegistration);
+        edittextConfPwdRegistration = (AppCompatEditText) rootview.findViewById(R.id.edittextConfPwdRegistration);
+        edittextMobileRegistration = (AppCompatEditText) rootview.findViewById(R.id.edittextMobileRegistration);
+        edittextDOBRegistration = (AppCompatEditText) rootview.findViewById(R.id.edittextDOBRegistration);
+        radioGroupGender = (RadioGroup) rootview.findViewById(R.id.radioGroupGender);
+        radioMale = (RadioButton) rootview.findViewById(R.id.radioMale);
+        radioFemale = (RadioButton) rootview.findViewById(R.id.radioFemale);
 
-        textViewTitleToolbarWithBack = (AppCompatTextView) rootview.findViewById(R.id.textViewTitleToolbarWithBack);
-
-        smoothProgressbarSignup = (SmoothProgressBar) rootview.findViewById(R.id.smoothProgressbarSignup);
-
-        buttonSignUp = (AppCompatButton) rootview.findViewById(R.id.buttonSignUp);
-
-        //
+        edittextDOBRegistration.setOnClickListener(this);
     }
-
-/*	@NonNull
-    @Override
-	public Dialog onCreateDialog( Bundle savedInstanceState) {
-		final Dialog dialog = new Dialog(getActivity(), getTheme()) {
-			@Override
-			public void onBackPressed() {
-				super.onBackPressed();
-			}
-		};
-		dialog.getWindow().requestFeature( Window.FEATURE_NO_TITLE);
-
-		return dialog;
-	}*/
 
     @Override
     public void onStart() {
@@ -244,18 +157,18 @@ public class SignupDialogFragment extends DialogFragment implements View.OnClick
         getDialog().getWindow().getAttributes().windowAnimations = R.style.animationDialog;
     }
 
+    //===============================READ PERMISSION FOR GET ACCOUNTS==============================
+
     private void setupSigninSignUpScreen(boolean isLoginScreen) {
 
     }
-
-    //===============================READ PERMISSION FOR GET ACCOUNTS==============================
 
     private void setPrimaryEmailId() {
         String primaryEmail_id = CommonUtils.getPrimaryEmailId(getActivity());
         Log.i(TAG, "initView: " + primaryEmail_id);
         if (!TextUtils.isEmpty(primaryEmail_id)) {
-            editTextEmailSignup.setText(primaryEmail_id);
-            editTextEmailSignup.setSelection(editTextEmailSignup.getText().length());
+            /*editTextEmailSignup.setText(primaryEmail_id);
+            editTextEmailSignup.setSelection(editTextEmailSignup.getText().length());*/
         }
     }
 
@@ -299,8 +212,16 @@ public class SignupDialogFragment extends DialogFragment implements View.OnClick
             case R.id.imageViewBackToolbar:
                 Toast.makeText(getActivity(), "Onclick Back", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.edittextDOBRegistration:
+                getDob();
+                break;
         }
     }
-//=============================== END READ PERMISSION FOR GET ACCOUNTS==============================
 
+    //=============================== END READ PERMISSION FOR GET ACCOUNTS==============================
+    private void getDob() {
+        Calendar c = Calendar.getInstance();
+        DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), dob, c.get(Calendar.YEAR), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH));
+        datePickerDialog.show();
+    }
 }

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dummy_bg"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_20dp"
+        android:alpha="0.6"
+        android:background="@color/black">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_edittext_height"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edittextFnameRegistration"
+                    style="@style/styleEdittextNormal"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/edittext_boarder_white"
+                    android:hint="@string/first_name" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edittextLnameRegistration"
+                    style="@style/styleEdittextNormal"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dimen_7dp"
+                    android:layout_marginStart="@dimen/dimen_7dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/edittext_boarder_white"
+                    android:hint="@string/last_name" />
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/edittextEmailRegistration"
+                style="@style/styleEdittextNormal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_edittext_height"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_weight="1"
+                android:background="@drawable/edittext_boarder_white"
+                android:hint="@string/email" />
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/edittextPwdRegistration"
+                style="@style/styleEdittextNormal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_edittext_height"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_weight="1"
+                android:background="@drawable/edittext_boarder_white"
+                android:hint="@string/password" />
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/edittextConfPwdRegistration"
+                style="@style/styleEdittextNormal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_edittext_height"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_weight="1"
+                android:background="@drawable/edittext_boarder_white"
+                android:hint="@string/conf_pwd" />
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/edittextMobileRegistration"
+                style="@style/styleEdittextNormal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_edittext_height"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_weight="1"
+                android:background="@drawable/edittext_boarder_white"
+                android:digits="0123456789"
+                android:hint="@string/mobile"
+                android:inputType="number" />
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/edittextDOBRegistration"
+                style="@style/styleEdittextNormal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_edittext_height"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_weight="1"
+                android:background="@drawable/edittext_boarder_white"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="@string/dob"
+                android:inputType="text" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <RadioButton
+                    android:id="@+id/radioMale"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="false"
+                    android:text="Male"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/radioFemale"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="false"
+                    android:text="Female"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </RadioGroup>
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/checkboxRegistration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:text="@string/keep_me_login"
+                android:textColor="@color/white" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="By click on Logged on asd asda asda "
+                android:textSize="@dimen/dimen_12sp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:background="@drawable/button_selector_grey"
+                android:text="@string/registration"
+                android:textAllCaps="true"
+                android:textStyle="bold" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonALreadyAccount"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:text="@string/already_have_acc"
+                android:textAllCaps="true"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
